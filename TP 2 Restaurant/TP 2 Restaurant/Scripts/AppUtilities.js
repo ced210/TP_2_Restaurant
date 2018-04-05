@@ -1,5 +1,5 @@
 ﻿// Required librairies: Bootbox.js
-function BBConfirm(message, href) {	//DIALOGUE DE COMFIRMATION (SUPPRESSION)
+function BBConfirm(message, href) {
     var confirmed = false;
     bootbox.confirm({
         title: ' <div class="BBConfirmBewareImage" style="height:30px;width:30px;"> </div> <b>Attention!<b/>',
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
 // Required librairies: jquery-ui.js, jquery.maskedinput.js
 function AppUtilities_BindCallBack() {
-    $(".phone").mask("(999) 999-9999");		//TOUT LES .PHONE, ONT CE MASK..
+    $(".phone").mask("(999) 999-9999");
     $(".zipcode").mask("a9a 9a9");
     $(".datepicker").attr('type', 'text'); // bypass browser default calendar control
     $(".datepicker").datepicker({

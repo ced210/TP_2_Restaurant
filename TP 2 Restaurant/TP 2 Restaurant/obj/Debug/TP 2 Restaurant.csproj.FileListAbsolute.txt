@@ -51,3 +51,56 @@ C:\Users\201348565\Desktop\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restau
 C:\Users\201348565\Desktop\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CoreCompileInputs.cache
 C:\Users\201348565\Desktop\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
 C:\Users\201348565\Desktop\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\ApplicationInsights.config
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll.config
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.pdb
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Antlr3.Runtime.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.SqlServer.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Web.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Newtonsoft.Json.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Helpers.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Mvc.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Optimization.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Razor.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Razor.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\WebGrease.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.SqlServer.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Helpers.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Mvc.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Optimization.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Razor.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Razor.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Antlr3.Runtime.pdb
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Newtonsoft.Json.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Web.xml
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Razor.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CoreCompileInputs.cache
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
