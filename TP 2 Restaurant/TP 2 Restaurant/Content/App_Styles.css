@@ -1,0 +1,55 @@
+﻿/* Application styles*/
+
+.ContainerUserLogoFit {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+}
+
+.SmallPhoto {
+    height: 60px;
+    border-radius: 6px;
+}
+
+.MediumPhoto {
+    height: 120px;
+    border-radius: 8px
+}
+
+.LargePhoto {
+    height: 280px;
+    border-radius: 10px;
+}
+
+.Icon {
+    height: 22px;
+}
+
+.SexIcon {
+    height: 50px;
+}
+
+.MediumIcon {
+    height: 60px;
+}
+
+.BBConfirmBewareImage {
+    background-image: url("UI_Images/important.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 6px;
+    float: left;
+}
+
+.Sort_Icon {
+    height: 19px;
+    margin-right: 3px;
+}
+
+th .Sort_Icon {
+    display: none;
+}
+
+.sorted_header {
+}
+

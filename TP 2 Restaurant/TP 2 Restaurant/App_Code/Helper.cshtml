@@ -1,0 +1,128 @@
+﻿@helper Header(string message)
+    {
+        <h2>@message</h2><hr />
+}
+@helper IconAction(System.Web.Mvc.UrlHelper Url, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <a href="@Url.Action(Action)">
+            <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+                 class="Icon" data-toggle="tooltip"
+                 data-placement="@ToolTipPlacement"
+                 title="@TooltipMessage" />
+        </a>
+}
+
+
+@helper IconActionController(System.Web.Mvc.UrlHelper Url, string Action, string controller, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <a href="@Url.Action(Action,controller)">
+            <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+                 class="Icon" data-toggle="tooltip"
+                 data-placement="@ToolTipPlacement"
+                 title="@TooltipMessage" />
+        </a>
+}
+
+@helper IconControllerAction(System.Web.Mvc.UrlHelper Url, string Controller, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <a href="@Url.Action(Action, Controller)">
+            <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+                 class="Icon" data-toggle="tooltip"
+                 data-placement="@ToolTipPlacement"
+                 title="@TooltipMessage" />
+        </a>
+}
+
+@helper IconConfirmedAction(System.Web.Mvc.UrlHelper Url, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+             style="cursor:pointer"
+             class="Icon" data-toggle="tooltip"
+             data-placement="@ToolTipPlacement"
+             title="@TooltipMessage"
+             onclick='BBConfirm("@TooltipMessage?","@Url.Action(Action)")' />
+}
+
+@helper IconConfirmedActionController(System.Web.Mvc.UrlHelper Url, string Action, string controller, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+             style="cursor:pointer"
+             class="Icon" data-toggle="tooltip"
+             data-placement="@ToolTipPlacement"
+             title="@TooltipMessage"
+             onclick='BBConfirm("@TooltipMessage?","@Url.Action(Action, controller)")' />
+}
+
+
+@helper SortAction(System.Web.Mvc.UrlHelper Url, string Action, string fieldCaption, string RecordName, string fieldName)
+    {
+        var sortIcon = Url.Content("~/Content/UI_Images/Sort.png");
+        var sortAscIcon = Url.Content("~/Content/UI_Images/SortAsc.png");
+        var sortDescIcon = Url.Content("~/Content/UI_Images/SortDesc.png");
+
+        <a href="@Url.Action(Action, new { by = fieldName })" style="float:left">
+            @if ((string)Session[RecordName + "SortBy"] == fieldName)
+            {
+                if ((bool)Session[RecordName + "SortAscendant"])
+                {
+                    <img src='@sortAscIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" class="Sort_Icon" />
+                }
+                else
+                {
+                    <img src='@sortDescIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" class="Sort_Icon"/>
+                }
+            }
+            else
+            {
+                <img src='@sortIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" class="Sort_Icon"/>
+            }
+        </a>
+        @(new HtmlString(fieldCaption))
+}
+
+@helper ImageUpLoader(System.Web.Mvc.UrlHelper Url, string imageUrl, string tooltipMessage, string style = "height:120px;max-width:300px;")
+    {
+        <img id="UploadedImage"
+             src="@Url.Content(imageUrl)"
+             style="@style;cursor:pointer"
+             data-toggle="tooltip"
+             title="@tooltipMessage" />
+        <input id="ImageUploader"
+               name="ImageUploader"
+               data-val="true"
+               type="file"
+               style="visibility:hidden;height:0px"
+               accept="image/jpeg,image/gif,image/png,image/bmp" />
+}
+
+@helper RatingBar(string fieldName, double value = 0, bool readOnly = false)
+    {
+        int integer = (int)Math.Round(value);
+        if (readOnly)
+        {
+            <input name="@fieldName" id="@fieldName" value=@integer class="RatingBar" disabled style="width:0px;display:none" />
+        }
+        else
+        {
+            <input name="@fieldName" id="@fieldName" value=@integer class="RatingBar" style="width:0px;display:none" />
+        }
+}
+
+@helper ComboBox(IEnumerable<object> items, string fieldName, int value = 0)
+    {
+        <select id="@fieldName" name="@fieldName" class="form-control">
+            @{
+                <option value="0">Sélection</option>
+                foreach (var item in items)
+                {
+                    string selected = "";
+                    <!-- item must be an object with 'Id' and 'Name' properties -->
+                    if (item.GetType().GetProperty("Id").GetValue(item, null).ToString() == value.ToString())
+                    {
+                        selected = "selected";
+                    }
+                    <option value="@item.GetType().GetProperty("Id").GetValue(item, null).ToString()" @selected>@item.GetType().GetProperty("Name").GetValue(item, null).ToString()</option>
+                }
+            }
+        </select>
+}
