@@ -20,10 +20,7 @@ namespace IRDB.Models
         public bool BYOW { get; set; }
         public double Rating { get; set; }
         public string Logo_Id { get; set; }
-
-	//////////Membre de navigation EF
         public virtual List<Rating> Ratings { get; set; }
-		//FK pour l'intégrité relationel en la table et l'Id
         [ForeignKey("Cuisine_Id")]
         public virtual Cuisine Cuisine { get; set; }
         [ForeignKey("PriceRange_Id")]

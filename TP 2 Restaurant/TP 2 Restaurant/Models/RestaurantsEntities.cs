@@ -17,7 +17,7 @@ namespace IRDB.Models
         #endregion
     }
 
-    public static class ContactsDBEntities_DAL	//Le DAL
+    public static class ContactsDBEntities_DAL
     {
         #region Restaurants CRUD functions
         public static Restaurant Create(this RestaurantsEntities DB, Restaurant restaurant)
@@ -42,8 +42,7 @@ namespace IRDB.Models
             }
             return null;
         }
-	// en privé pour ne pas que le user puisse update directement le rating du resto
-        private static void UpdateRating(this RestaurantsEntities DB, int restaurantId)	
+        private static void UpdateRating(this RestaurantsEntities DB, int restaurantId)
         {
             Restaurant restaurantToUpdate = DB.Restaurants.Find(restaurantId);
             if (restaurantToUpdate != null)
@@ -74,7 +73,6 @@ namespace IRDB.Models
                 DB.SaveChanges();
             }
         }
-	//
         public static List<RestaurantView> SortedRestaurantList(this RestaurantsEntities DB, string orderBy, bool ascending)
         {
             List<RestaurantView> items = new List<RestaurantView>();
