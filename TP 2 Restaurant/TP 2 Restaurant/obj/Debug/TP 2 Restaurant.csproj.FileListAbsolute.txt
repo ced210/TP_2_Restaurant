@@ -253,3 +253,5 @@ C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\
 C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\vbc.rsp
 C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe
 C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.AddViewBag.resources
+C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.GenerateResource.Cache
