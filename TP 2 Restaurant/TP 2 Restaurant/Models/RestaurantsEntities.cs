@@ -15,6 +15,8 @@ namespace IRDB.Models
         public DbSet<Cuisine> Cuisines { get; set; }
         public DbSet<PriceRange> PriceRanges { get; set; }
         #endregion
+
+        public System.Data.Entity.DbSet<IRDB.Models.RestaurantView> RestaurantViews { get; set; }
     }
 
     public static class ContactsDBEntities_DAL
