@@ -59,8 +59,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cuisine_Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cuisine_Id, "", new { @class = "text-danger" })
+                <select id="CategoryId" name="CategoryId" class="form-control" style="">
+                <option value="0">Type de cuisine</option>
+                @foreach (var cuis in ViewBag.Cuisines)
+                {
+                    <option value="@cuis.Id">@cuis.Name</option>
+                }
+            </select>
             </div>
         </div>
 

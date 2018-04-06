@@ -21,7 +21,7 @@ namespace TP_2_Restaurant.Controllers
         {
             using (var DB = new RestaurantsEntities())
             {
-                //ViewBag.Cuisines = DB.Cuisines.ToList();
+                ViewBag.Cuisines = DB.Cuisines.ToList();
                 return View();
             }
         }
