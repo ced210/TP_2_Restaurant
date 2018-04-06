@@ -49,7 +49,8 @@ namespace TP_2_Restaurant.Controllers
                     //}
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
-                    DB.Create(resto);
+                    resto.Logo_Id = "./RestaurantLogos/restaurant-icon.png";
+                    DB.Restaurants.Add(resto);
                     return RedirectToAction("Index");
                 }
                 return View();
