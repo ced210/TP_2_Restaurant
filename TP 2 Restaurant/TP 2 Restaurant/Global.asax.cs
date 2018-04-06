@@ -25,6 +25,30 @@ namespace TP_2_Restaurant
             //    DB.Cuisines.Add(new Cuisine { Name = "Bidon" });
             //    DB.SaveChanges();
             //}
+
+            using (var DB = new IRDB.Models.RestaurantsEntities())
+            {
+                Restaurant r = new Restaurant();
+
+
+                r.Id = 0;
+
+                r.Name = "alloresto";
+
+                r.Address = "43 boul duTest";
+                r.ZipCode = "J6Z 4H1";
+                r.Phone = "450-450-1111";
+
+                r.Website = "http://test.tv";
+                r.Cuisine_Id = 1;
+                r.PriceRange_Id = 1;
+                r.BYOW = true;
+                r.Rating = 20.00;
+                r.Logo_Id = "0";
+
+                DB.Restaurants.Add(r);
+                DB.SaveChanges();
+            }
         }
     }
 }

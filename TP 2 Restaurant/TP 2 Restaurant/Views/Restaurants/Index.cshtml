@@ -12,34 +12,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Logo_Id)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Website)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cuisine_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PriceRange_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BYOW)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Logo_Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cuisine)
@@ -47,8 +26,12 @@
         <th>
             @Html.DisplayNameFor(model => model.PriceRange)
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.NbRatings)
+            @Html.DisplayNameFor(model => model.BYOW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th></th>
     </tr>
@@ -58,20 +41,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZipCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cuisine_Id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PriceRange_Id)
@@ -90,9 +62,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PriceRange)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NbRatings)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
