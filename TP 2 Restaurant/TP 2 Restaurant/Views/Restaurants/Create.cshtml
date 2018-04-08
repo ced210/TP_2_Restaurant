@@ -59,7 +59,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="CategoryId" name="CategoryId" class="form-control" style="">
+                <select id="Cuisine_Id" name="Cuisine_Id" class="form-control" style="">
                 <option value="0">Type de cuisine</option>
                 @foreach (var cuis in ViewBag.Cuisines)
                 {
@@ -72,13 +72,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PriceRange_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="CategoryId" name="CategoryId" class="form-control" style="">
+                <select id="PriceRange_Id" name="PriceRange_Id" class="form-control" style="">
                 <option value="0">Type de budget</option>
-                    @{string price = ""; }
-                @for (int cpt = 0; cpt < 5; cpt++)
+                @foreach (var price in ViewBag.PriceRanges)
                 {
-                    @(price +=  "$ ");
-                    <option value="@cpt + 1">@price</option>
+                    <option value="@price.Id">@price.Name</option>
                 }
             </select>
             </div>

@@ -22,6 +22,7 @@ namespace TP_2_Restaurant.Controllers
             using (var DB = new RestaurantsEntities())
             {
                 ViewBag.Cuisines = DB.Cuisines.ToList();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 return View();
             }
         }
@@ -32,6 +33,7 @@ namespace TP_2_Restaurant.Controllers
             using (var DB = new RestaurantsEntities())
             {
                 ViewBag.Cuisines = DB.Cuisines.ToList();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 if (!ModelState.IsValid)
                 {
                     //if (!string.IsNullOrEmpty(restaurantView.))
@@ -49,21 +51,20 @@ namespace TP_2_Restaurant.Controllers
                     //}
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
-                    resto.Logo_Id = "./RestaurantLogos/restaurant-icon.png";
 
-                    resto.Id = 1;
-                    resto.Name = "Test 2";
-                    resto.Address = "123 test";
-                    resto.ZipCode = "G4S3H5".ToUpper();
-                    resto.Phone = "(542)435-2345";
-                    resto.Website = "https://test.com";
-                    resto.Cuisine_Id = 3;
-                    resto.PriceRange_Id = 2;
-                    resto.BYOW = false;
-                    resto.Rating = 4;
-                    resto.Logo_Id = "./RestaurantLogos/restaurant-icons.png";
+                    //resto.Id = 1;
+                    //resto.Name = "Test 2";
+                    //resto.Address = "123 test";
+                    //resto.ZipCode = "G4S3H5".ToUpper();
+                    //resto.Phone = "(542)435-2345";
+                    //resto.Website = "https://test.com";
+                    //resto.Cuisine_Id = 3;
+                    //resto.PriceRange_Id = 2;
+                    //resto.BYOW = false;
+                    resto.Rating = 0;
+                    //resto.Logo_Id = "./RestaurantLogos/restaurant-icons.png";
 
-                    DB.Restaurants.Add(resto);
+                     DB.Restaurants.Add(resto);
                     DB.SaveChanges();
                     return RedirectToAction("Index");
                 }
