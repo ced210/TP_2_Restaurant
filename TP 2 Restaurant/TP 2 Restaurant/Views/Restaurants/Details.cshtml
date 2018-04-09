@@ -7,19 +7,63 @@
 <h2>Details</h2>
 
 <!--En-tete Detail du restaurant-->
+<!---->
 <table style="font-size:larger">
-    <tbody>
-        <tr>
-            <td rowspan="6" style="padding-right:6px">
-                <a href="@ViewBag.Website">
-                    <img /> allloo
-                </a>
-            </td>
-        </tr>
-    </tbody>
+    <tr>
+        <td rowspan="6" style="padding-right:6px;">
+            <a href="@ViewBag.WebSite" target="_blank" data-toggle="tooltip" title="@ViewBag.WebSite">
+                <img src="/IRDB/RestaurantLogos/@ViewBag.Logo_id" class="MediumPhoto" />
+            </a>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td><span style="font-size:x-large; font-weight:700"><!--Name-->Arousse</span></td>
+                    <td>
+                        <!--Rating-->
+                        <input name="Rating" id="Rating" value=3 class="RatingBar" disabled style="width:0px;display:none" />
+                    </td>
+                    <td><span style="font-size:large;"><!--NbRating-->(6)</span></td>
+                </tr>
+            </table>
+        </td>
+        <td rowspan="6">
+            <!--Image BYOW-->
+            <img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Adress-->
+            <a href="https://www.google.ca/maps/place/ @ViewBag.Restaurant.Address" target="_blank">
+                @ViewBag.Restaurant.Address
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Phone-->
+            @ViewBag.Restaurant.Phone
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Cuisine: </td>
+                    <!--Cuisine-->  
+                    <td>libanaise &nbsp;&nbsp;</td>
+                    <!--PriceRating-->
+                    <td><b style="color:goldenrod">$ $</b></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
 </table>
-
-
+<!---->
 
 
 <div>
@@ -132,7 +176,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+

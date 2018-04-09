@@ -58,6 +58,17 @@ namespace TP_2_Restaurant.Controllers
         }
 
 
+        public ActionResult Details(int Id)
+        {
+            using (var DB = new RestaurantsEntities())
+            {
+                ViewBag.Restaurant = DB.Restaurants.Find(Id);
+                //return View();
+            }
+            return View();
+        }
+
+
 
         public ActionResult Create()
         {
