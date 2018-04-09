@@ -47,8 +47,8 @@ namespace TP_2_Restaurant.Controllers
         // GET: Restaurants
         public ActionResult Index()
         {
+            //List<RestaurantView> db = new List<RestaurantView>();
             //db.Add(new Restaurant { Name = "Test" }.ToRestaurantView());
-            return View(db);
 
             InitializeSessionSort();
             using (var DB = new RestaurantsEntities())
