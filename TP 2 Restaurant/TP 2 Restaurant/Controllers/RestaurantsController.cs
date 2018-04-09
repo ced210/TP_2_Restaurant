@@ -9,44 +9,10 @@ namespace TP_2_Restaurant.Controllers
 {
     public class RestaurantsController : Controller
     {
-        ///<permission cref="">Ced</permission>
-        /// <summary>
-        /// Ced 8 Avril
-        /// 
-        /// Initialise le tri à Par Nom
-        /// et en ordre croissant
-        /// </summary>
-        private void InitializeSessionSort()
-        {
-            if (Session["RestaurantSortBy"] ==  null)
-            {
-                Session["RestaurantSortBy"] = "Name";
-                Session["RestaurantSortAscendant"] = true;
-            }
-        }
-        ///<permission cref="">Ced</permission>
-        /// <summary>
-        /// Ced 8 Avril
-        /// 
-        /// Tri selon l'attribut
-        /// </summary>
-        public ActionResult Sort(string by)
-        {
-            if (by == (string)Session["RestaurantSortBy"])
-                // Inverse le tri
-                Session["RestauratSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
-            else
-                Session["RestaurantSortAscendant"] = true;
-            //Donne le tri demander
-            Session["RestaurantSortBy"] = by;
-            //Redirige vers l'action Index()
-            return RedirectToAction("Index");
-
-        }
-
         // GET: Restaurants
         public ActionResult Index()
         {
+<<<<<<< HEAD
             //List<RestaurantView> db = new List<RestaurantView>();
             //db.Add(new Restaurant { Name = "Test" }.ToRestaurantView());
 
@@ -55,9 +21,12 @@ namespace TP_2_Restaurant.Controllers
             {
                 return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"])); 
             }
+=======
+            List<RestaurantView> db = new List<RestaurantView>();
+            //db.Add(new Restaurant { Name = "Test" }.ToRestaurantView());
+            return View(db);
+>>>>>>> parent of 461778c... Merge branch 'CEDCEDCED' into DOM
         }
-
-
 
         public ActionResult Create()
         {
