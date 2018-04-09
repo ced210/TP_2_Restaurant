@@ -21,9 +21,10 @@ namespace TP_2_Restaurant.Controllers
         {
             using (var DB = new RestaurantsEntities())
             {
+                RestaurantView restoView = new RestaurantView();
                 ViewBag.Cuisines = DB.Cuisines.ToList();
                 ViewBag.PriceRanges = DB.PriceRanges.ToList();
-                return View();
+                return View(restoView);
             }
         }
 
@@ -49,6 +50,7 @@ namespace TP_2_Restaurant.Controllers
                     //        return View();
                     //    }
                     //}
+                    restaurantView.UpLoadLogo(Request);
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
 
@@ -61,10 +63,10 @@ namespace TP_2_Restaurant.Controllers
                     //resto.Cuisine_Id = 3;
                     //resto.PriceRange_Id = 2;
                     //resto.BYOW = false;
-                    resto.Rating = 0;
+                    //resto.Rating = 0;
                     //resto.Logo_Id = "./RestaurantLogos/restaurant-icons.png";
 
-                     DB.Restaurants.Add(resto);
+                    DB.Restaurants.Add(resto);
                     DB.SaveChanges();
                     return RedirectToAction("Index");
                 }

@@ -57,13 +57,13 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cuisines, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <select id="Cuisine_Id" name="Cuisine_Id" class="form-control" style="">
                 <option value="0">Type de cuisine</option>
-                @foreach (var cuis in ViewBag.Cuisines)
+                @foreach (var cuisine in ViewBag.Cuisines)
                 {
-                    <option value="@cuis.Id">@cuis.Name</option>
+                    <option value="@cuisine.Id">@cuisine.Name</option>
                 }
             </select>
             </div>
@@ -100,11 +100,17 @@
             </div>
         </div>-->
 
+        <!--<div class="form-group">
+            //AHtml.LabelFor(model => model.Logo_Id, htmlAttributes: new { Aclass = "control-label col-md-2" })
+            <div class="col-md-10">
+                //AHtml.EditorFor(model => model.Logo_Id, new { htmlAttributes = new { Aclass = "form-control" } })
+                //AHtml.ValidationMessageFor(model => model.Logo_Id, "", new { Aclass = "text-danger" })
+            </div>
+        </div>-->
         <div class="form-group">
             @Html.LabelFor(model => model.Logo_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Logo_Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Logo_Id, "", new { @class = "text-danger" })
+                @Helper.ImageUpLoader(Url, Model.GetLogoURL(), "Cliquez pour choisir la photo...", "max-width:280px;")
             </div>
         </div>
 
