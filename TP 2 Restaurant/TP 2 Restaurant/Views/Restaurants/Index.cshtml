@@ -13,7 +13,7 @@
     <!-- En-tête de la List -->
     <tr>
         <th class="col-md-1">
-            <!--@Html.DisplayNameFor(model => model.Logo_Id)-->Logo
+            Logo
         </th>
         <th class="col-md-3 sorted_header">
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Name).ToString(), "Restaurant", "Name")
@@ -22,7 +22,7 @@
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Cuisine).ToString(), "Restaurant", "Cuisine")
         </th>
         <th class="col-md-2 sorted_header">
-           @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.PriceRange).ToString(), "Restaurant", "Budget")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.PriceRange).ToString(), "Restaurant", "Budget")
         </th>
         <th class="col-md-2 sorted_header">
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.BYOW).ToString(), "Restaurant", "Apporter son Vin")
@@ -31,7 +31,9 @@
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating).ToString(), "Restaurant", "Evaluation")
         </th>
         <!--FB pour ajouter un restaurant-->
-        <th style="width:80px"> @Helper.IconAction(Url, "Create", "Add", "Ajouter un Restaurant")</th>
+        <th style="min-width:40px"> @Helper.IconAction(Url, "Create", "Add", "Ajouter un Restaurant")</th>
+        <th style="min-width:40px"></th>
+        <th style="min-width:40px"></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -41,21 +43,21 @@
             <!--l'image de ce resto, de la class smallphoto  App_Styles.css-->
             <img src="@Url.Content(item.GetLogoURL())" class="SmallPhoto"/>
         </td>
-                        
         <td>
             <!--Hyper liens vers le site web de ce resto-->
             <a href="@item.Website">
                 <b>@Html.DisplayFor(modelItem => item.Name)</b>
             </a>
         </td>
+        <!--Le nom de Cuisine-->
         <td>
             @Html.DisplayFor(modelItem => item.Cuisine)
         </td>
-        <td>
+        <!--Budget, nb de * selon le PriceRange-->
+        <td style="color:goldenrod">
             @Html.DisplayFor(modelItem => item.PriceRange)
         </td>
         <td>
-            <!--@Html.DisplayFor(modelItem => item.BYOW)-->
             <!--Si il il faut BYOW-->
             @if (item.BYOW)
             {
@@ -64,46 +66,24 @@
             }
         </td>
         <td>
-            <!--Fct pour le bon nombre d'étoile, switch?-->
-            @switch (Math.Round(item.Rating)/*deja calculé*/)/*Arrondire au plus haut??*/
-            {
-                case 1:
-                    <img class="star"/>
-                    break;
-                case 2:
-                    <img class="star" />
-                    <img class="star" />
-                    break;
-                case 3:
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    break;
-                case 4:
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    break;
-                case 5:
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    <img class="star" />
-                    break;
-            }
+
+            @Helper.RatingBar("Rating", item.Rating, true)
             <!--le nombre de Rating entre paranthèse-->
-            (@item.Rating)
+            (@item.Rating)<!--A enlever-->
+            (@item.NbRatings)
         </td>
 
         <!--Boutton CRUD pour chaque Resto-->
         <td style="width:80px">
             @Helper.IconAction(Url, "Edit/" + item.Id.ToString(), "Edit", "Modifier " + item.Name)
-            @Helper.IconAction(Url, "Detail/"+item.Id.ToString(),"Details", "Voir les détails du restaurant", item.Name)
+        </td>
+        <td style="width:80px">
+            @Helper.IconAction(Url, "Detail/" + item.Id.ToString(), "Details", "Voir les détails du restaurant", item.Name)
+        </td>
+        <td style="width:80px">
             @Helper.IconConfirmedAction(Url, "Delete/" + item.Id.ToString(), "Delete", "Effacer " + item.Name)
         </td>
+
     </tr>
 }
 
