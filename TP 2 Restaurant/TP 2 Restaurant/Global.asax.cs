@@ -26,25 +26,49 @@ namespace TP_2_Restaurant
             //    DB.SaveChanges();
             //}
 
+            ///Ajouter un resto au demarage
+            //using (var DB = new IRDB.Models.RestaurantsEntities())
+            //{
+            //    Restaurant r = new Restaurant();
+
+
+            //    r.Id = 1;
+
+            //    r.Name = "alloresto2";
+
+            //    r.Address = "43 boul duTest2";
+            //    r.ZipCode = "J2Z 4H1";
+            //    r.Phone = "514-450-1111";
+
+            //    r.Website = "http://test222.tv";
+            //    r.Cuisine_Id = 2;
+            //    r.PriceRange_Id = 2;
+            //    r.BYOW = false;
+            //    r.Rating = 2.00;
+            //    r.Logo_Id = "2";
+
+            //    DB.Restaurants.Add(r);
+            //    DB.SaveChanges();
+            //}
             using (var DB = new IRDB.Models.RestaurantsEntities())
             {
                 Restaurant r = new Restaurant();
 
 
-                r.Id = 0;
+                r.Id = 1;
 
-                r.Name = "alloresto";
+                r.Name = "alloresto2";
 
-                r.Address = "43 boul duTest";
-                r.ZipCode = "J6Z 4H1";
-                r.Phone = "450-450-1111";
+                r.Address = "43 boul duTest2";
+                r.ZipCode = "J2Z 4H1";
+                r.Phone = "514-450-1111";
 
-                r.Website = "http://test.tv";
-                r.Cuisine_Id = 1;
-                r.PriceRange_Id = 1;
-                r.BYOW = true;
-                r.Rating = 20.00;
-                r.Logo_Id = "0";
+                r.Website = "http://test222.tv";
+                r.Cuisine_Id = 2;
+                r.PriceRange_Id = 2;
+                r.BYOW = false;
+                r.Rating = 2.00;
+                r.Logo_Id = "5";
 
                 DB.Restaurants.Add(r);
                 DB.SaveChanges();

@@ -359,3 +359,106 @@ d:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaur
 d:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CopyComplete
 d:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
 d:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\ApplicationInsights.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.pdb
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csc.exe
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csc.exe.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csc.rsp
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csi.exe
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csi.exe.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\csi.rsp
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.AppContext.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Console.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.IO.Compression.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Claims.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.ValueTuple.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\vbc.exe
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\vbc.exe.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\vbc.rsp
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Antlr3.Runtime.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.SqlServer.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Web.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Newtonsoft.Json.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Helpers.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Mvc.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Optimization.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Razor.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\WebGrease.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\EntityFramework.SqlServer.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Helpers.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Mvc.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Optimization.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.Razor.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Antlr3.Runtime.pdb
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Newtonsoft.Json.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\Microsoft.AI.Web.xml
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.Razor.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csprojResolveAssemblyReference.cache
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.AddViewBag.resources
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.GenerateResource.Cache
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CoreCompileInputs.cache
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
