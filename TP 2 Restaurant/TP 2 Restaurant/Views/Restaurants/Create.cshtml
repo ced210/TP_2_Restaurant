@@ -7,11 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Restaurants", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(m => m.Cuisine_Id)
-
+    
     <div class="form-horizontal">
         <h4>RestaurantView</h4>
         <hr />
@@ -57,28 +56,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Cuisines, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="Cuisine_Id" name="Cuisine_Id" class="form-control" style="">
-                <option value="0">Type de cuisine</option>
-                @foreach (var cuisine in ViewBag.Cuisines)
-                {
-                    <option value="@cuisine.Id">@cuisine.Name</option>
-                }
-            </select>
+                @Helper.ComboBox(ViewBag.Cuisines, "Cuisine_Id")
+                @Html.ValidationMessageFor(model => model.Cuisine_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PriceRange_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="PriceRange_Id" name="PriceRange_Id" class="form-control" style="">
-                <option value="0">Type de budget</option>
-                @foreach (var price in ViewBag.PriceRanges)
-                {
-                    <option value="@price.Id">@price.Name</option>
-                }
-            </select>
+                @Helper.ComboBox(ViewBag.PriceRanges, "PriceRange_Id")
+                @Html.ValidationMessageFor(model => model.PriceRange_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -99,7 +88,6 @@
                 //AHtml.ValidationMessageFor(model => model.Rating, "", new { Aclass = "text-danger" })
             </div>
         </div>-->
-
         <!--<div class="form-group">
             //AHtml.LabelFor(model => model.Logo_Id, htmlAttributes: new { Aclass = "control-label col-md-2" })
             <div class="col-md-10">
@@ -125,7 +113,7 @@
         <div class="form-group">
             //AHtml.LabelFor(model => model.PriceRange, htmlAttributes: new { Aclass = "control-label col-md-2" })
             <div class="col-md-10">
-                
+
             </div>
         </div>
 
@@ -145,9 +133,9 @@
     </div>
 }
 
-    <div>
-        @Helper.IconAction(Url, "Index", "Back", "Retour a la liste de restaurants")
-    </div>
+<div>
+    @Helper.IconAction(Url, "Index", "Back", "Retour a la liste des restaurants")
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
