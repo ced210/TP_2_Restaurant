@@ -1,0 +1,138 @@
+﻿@model IRDB.Models.RestaurantView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<!--En-tete Detail du restaurant-->
+<table style="font-size:larger">
+    <tbody>
+        <tr>
+            <td rowspan="6" style="padding-right:6px">
+                <a href="@ViewBag.Website">
+                    <img /> allloo
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<div>
+    <h4>RestaurantView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuisine_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuisine_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceRange_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceRange_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BYOW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BYOW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuisine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuisine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbRatings)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbRatings)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

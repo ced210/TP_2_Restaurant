@@ -1,0 +1,41 @@
+﻿/* Application styles*/
+
+.ContainerUserLogoFit {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+}
+
+.SmallPhoto {
+    height: 60px;
+    border-radius: 6px;
+}
+
+.MediumPhoto {
+    height: 160px;
+    border-radius: 8px
+}
+
+.LargePhoto {
+    height: 280px;
+    border-radius: 10px;
+}
+
+.Icon {
+    height: 24px;
+}
+.SexIcon {
+    height: 50px;
+}
+
+.MediumIcon {
+    height: 60px;
+}
+
+.BBConfirmBewareImage {
+    background-image: url("UI_Images/important.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 6px;
+    float: left;
+}

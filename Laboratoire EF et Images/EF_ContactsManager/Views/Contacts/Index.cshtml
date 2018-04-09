@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EF_ContactsManager.Models.ContactView>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liste des contacts</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AvatarId)
+        </th>
+        <th>
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.FirstName).ToString() + " " + Html.DisplayNameFor(model => model.LastName).ToString(), "Contact",  "Name")           
+        </th>
+        <th>
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Sex).ToString(), "Contact", "Sex")
+        </th>
+        <th>
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.BirthDate).ToString(), "Contact", "BirthDate")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+       
+        <th  style="width:80px"> @Helper.IconAction(Url, "Create", "Add", "Ajouter un contact")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="data_row">
+            <td style="text-align:center">
+                <img src="@Url.Content(item.GetPhotoURL())" class="SmallPhoto" />
+            </td>
+            <td>
+                <a href="mailto:@item.EMail">
+                    <b>@Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</b>
+                </a>
+            </td>
+            <td style="text-align:center">
+                @Helper.SexIcon(Url, item.Sex,"SexIcon", Html.EnumDisplayNameFor(modelItem => item.Sex).ToString())
+            </td>
+            <td>
+                @item.BirthDate.ToShortDateString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td style="width:80px">
+                @Helper.IconAction(Url, "Edit/" + item.Id.ToString(), "Edit", "Modifier " + item.FirstName + " " + item.LastName)
+                @Helper.IconConfirmedAction(Url, "Delete/" + item.Id.ToString(), "Delete", "Effacer " + item.FirstName + " " + item.LastName)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -76,19 +76,6 @@ namespace TP_2_Restaurant.Controllers
                 ViewBag.Cuisines = DB.Cuisines.ToList();
                 if (ModelState.IsValid)
                 {
-                    //if (!string.IsNullOrEmpty(restaurantView.))
-                    //{
-                    //    if (!DB.CategoryExist(restaurantView.newCategory))
-                    //    {
-                    //        Category new_Category = DB.Add(new Category { Id = 0, Name = restaurantView.newCategory });
-                    //        restaurantView.CategoryId = new_Category.Id;
-                    //    }
-                    //    else
-                    //    {
-                    //        ModelState.AddModelError("NewCategory", "This category already exist.");
-                    //        return View();
-                    //    }
-                    //}
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
                     resto.Logo_Id = "./RestaurantLogos/restaurant-icon.png";
