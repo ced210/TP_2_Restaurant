@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201804062000292_AddViewBag.Designer.cs">
       <DependentUpon>201804062000292_AddViewBag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804121721384_CedEtDom.cs" />
+    <Compile Include="Migrations\201804121721384_CedEtDom.Designer.cs">
+      <DependentUpon>201804121721384_CedEtDom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cuisine.cs" />
     <Compile Include="Models\PriceRange.cs" />
@@ -281,6 +285,7 @@
     <Content Include="Views\Restaurants\Create.cshtml" />
     <Content Include="Views\Restaurants\Details.cshtml" />
     <Content Include="Views\Ratings\Create.cshtml" />
+    <Content Include="Views\Restaurants\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -297,6 +302,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804062000292_AddViewBag.resx">
       <DependentUpon>201804062000292_AddViewBag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804121721384_CedEtDom.resx">
+      <DependentUpon>201804121721384_CedEtDom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

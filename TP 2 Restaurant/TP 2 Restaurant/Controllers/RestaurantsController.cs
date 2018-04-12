@@ -18,7 +18,7 @@ namespace TP_2_Restaurant.Controllers
         /// </summary>
         private void InitializeSessionSort()
         {
-            if (Session["RestaurantSortBy"] ==  null)
+            if (Session["RestaurantSortBy"] == null)
             {
                 Session["RestaurantSortBy"] = "Name";
                 Session["RestaurantSortAscendant"] = true;
@@ -53,7 +53,7 @@ namespace TP_2_Restaurant.Controllers
             InitializeSessionSort();
             using (var DB = new RestaurantsEntities())
             {
-                return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"])); 
+                return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"]));
             }
         }
 
@@ -64,7 +64,7 @@ namespace TP_2_Restaurant.Controllers
         /// <returns></returns>
         public ActionResult Details(int Id)
         {
-            Restaurant resto = null; 
+            Restaurant resto = null;
             using (var DB = new RestaurantsEntities())
             {
                 resto = DB.Restaurants.Find(Id);
@@ -72,7 +72,7 @@ namespace TP_2_Restaurant.Controllers
                 {
                     ViewBag.RestaurantViews = resto.ToRestaurantView();
                     //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
-                    return View(DB.SortedRatingList(Id,"Date",true));
+                    return View(DB.SortedRatingList(Id, "Date", true));
                 }
             }
             return RedirectToAction("Index");
@@ -118,6 +118,46 @@ namespace TP_2_Restaurant.Controllers
                 }
                 return View(restaurantView);
             }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            using (var DB = new RestaurantsEntities())
+            {
+                Restaurant resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    resto.ToRestaurantView().RemoveLogo();
+                    DB.DeleteRestaurant(id);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            Restaurant resto = null;
+            using (var DB = new RestaurantsEntities())
+            {
+                resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    RestaurantView restoView = new RestaurantView();
+                    ViewBag.Cuisines = DB.Cuisines.ToList();
+                    ViewBag.PriceRanges = DB.PriceRanges.ToList();
+                    restoView = resto.ToRestaurantView();
+                    return View(restoView);
+                }
+            }
+            return RedirectToAction("Index");
+
+        }
+        [HttpPost]
+        public ActionResult Edit(RestaurantView restaurantView)
+        {
+            restaurantView.UpLoadLogo(Request);
+            using (var db = new RestaurantsEntities()) { db.Update(restaurantView.ToRestaurant()); }
+            return RedirectToAction("Index");
         }
     }
 }

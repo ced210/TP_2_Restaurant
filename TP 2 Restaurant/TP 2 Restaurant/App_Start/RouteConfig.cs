@@ -16,7 +16,7 @@ namespace TP_2_Restaurant
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Restaurants", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
