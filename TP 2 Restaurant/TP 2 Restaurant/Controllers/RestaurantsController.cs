@@ -119,5 +119,61 @@ namespace TP_2_Restaurant.Controllers
                 return View(restaurantView);
             }
         }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Delete(int id)
+        {
+            using (var DB = new RestaurantsEntities())
+            {
+                Restaurant resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    resto.ToRestaurantView().RemoveLogo();
+                    DB.DeleteRestaurant(id);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Edit(int id)
+        {
+            Restaurant resto = null;
+            using (var DB = new RestaurantsEntities())
+            {
+                resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    RestaurantView restoView = new RestaurantView();
+                    ViewBag.Cuisines = DB.Cuisines.ToList();
+                    ViewBag.PriceRanges = DB.PriceRanges.ToList();
+                    restoView = resto.ToRestaurantView();
+                    return View(restoView);
+                }
+            }
+            return RedirectToAction("Index");
+
+        }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="restaurantView"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Edit(RestaurantView restaurantView)
+        {
+            restaurantView.UpLoadLogo(Request);
+            using (var db = new RestaurantsEntities()) { db.Update(restaurantView.ToRestaurant()); }
+            return RedirectToAction("Index");
+        }
     }
 }
