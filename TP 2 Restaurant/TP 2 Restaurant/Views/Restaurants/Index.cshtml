@@ -16,19 +16,19 @@
             Logo
         </th>
         <th class="col-md-3 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Name).ToString(), "Restaurant", "Name")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Name).ToString(), "RestaurantView", "Name")
         </th>
         <th class="col-md-2 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Cuisine).ToString(), "Restaurant", "Cuisine")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Cuisine).ToString(), "Restaurants", "Cuisine")
         </th>
         <th class="col-md-2 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.PriceRange).ToString(), "Restaurant", "Budget")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.PriceRange).ToString(), "Restaurants", "PriceRange")
         </th>
         <th class="col-md-2 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.BYOW).ToString(), "Restaurant", "Apporter son Vin")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.BYOW).ToString(), "Restaurants", "BYOW")
         </th>
         <th class="col-md-2 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating).ToString(), "Restaurant", "Evaluation")
+            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating).ToString(), "Restaurants", "Rating")
         </th>
         <!--FB pour ajouter un restaurant-->
         <th style="min-width:40px"> @Helper.IconAction(Url, "Create", "Add", "Ajouter un Restaurant")</th>

@@ -20,7 +20,9 @@ namespace TP_2_Restaurant.Controllers
         {
             using (var DB = new RestaurantsEntities())
             {
-                return View();
+                RatingView ratingView = new RatingView();
+
+                return View(ratingView);
             }
         }
         [HttpPost]
@@ -32,10 +34,17 @@ namespace TP_2_Restaurant.Controllers
                 {
                     Rating rating = new Rating();
                     rating = ratingview.ToRating();
+                    //le resto courrant de la page Details d'avant
+                    rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
+
+
                     DB.Ratings.Add(rating);
+                    DB.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                return View();
+                //
+                ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
+                return View(ratingview);
             }
         }
     }

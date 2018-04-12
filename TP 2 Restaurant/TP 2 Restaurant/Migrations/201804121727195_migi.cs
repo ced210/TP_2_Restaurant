@@ -3,7 +3,7 @@ namespace TP_2_Restaurant.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CedEtDom : DbMigration
+    public partial class migi : DbMigration
     {
         public override void Up()
         {

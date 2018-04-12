@@ -18,7 +18,7 @@ namespace TP_2_Restaurant.Controllers
         /// </summary>
         private void InitializeSessionSort()
         {
-            if (Session["RestaurantSortBy"] == null)
+            if (Session["RestaurantSortBy"] ==  null)
             {
                 Session["RestaurantSortBy"] = "Name";
                 Session["RestaurantSortAscendant"] = true;
@@ -34,7 +34,7 @@ namespace TP_2_Restaurant.Controllers
         {
             if (by == (string)Session["RestaurantSortBy"])
                 // Inverse le tri
-                Session["RestauratSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
+                Session["RestaurantSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
             else
                 Session["RestaurantSortAscendant"] = true;
             //Donne le tri demander
@@ -53,26 +53,27 @@ namespace TP_2_Restaurant.Controllers
             InitializeSessionSort();
             using (var DB = new RestaurantsEntities())
             {
-                return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"]));
+                return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"])); 
             }
         }
 
         /// <summary>
-        /// Ced 12 avril
+        /// Ced 12 avril MOD
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
         public ActionResult Details(int Id)
         {
-            Restaurant resto = null;
+            Restaurant resto = null; 
             using (var DB = new RestaurantsEntities())
             {
                 resto = DB.Restaurants.Find(Id);
                 if (resto != null)
                 {
+                    Session["CurrentRestaurant"] = resto;
                     ViewBag.RestaurantViews = resto.ToRestaurantView();
                     //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
-                    return View(DB.SortedRatingList(Id, "Date", true));
+                    return View(DB.SortedRatingList(Id,"Date",true));
                 }
             }
             return RedirectToAction("Index");
@@ -80,7 +81,7 @@ namespace TP_2_Restaurant.Controllers
 
 
         /// <summary>
-        /// Dom
+        /// Dom 12 av
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
@@ -94,7 +95,7 @@ namespace TP_2_Restaurant.Controllers
             }
         }
         /// <summary>
-        /// Dom
+        /// Dom 12 av
         /// </summary>
         /// <param name="restaurantView"></param>
         /// <returns></returns>
@@ -108,7 +109,6 @@ namespace TP_2_Restaurant.Controllers
                 ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 if (ModelState.IsValid)
                 {
-
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
 
@@ -120,6 +120,11 @@ namespace TP_2_Restaurant.Controllers
             }
         }
 
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             using (var DB = new RestaurantsEntities())
@@ -134,6 +139,11 @@ namespace TP_2_Restaurant.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
             Restaurant resto = null;
@@ -152,6 +162,12 @@ namespace TP_2_Restaurant.Controllers
             return RedirectToAction("Index");
 
         }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="restaurantView"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Edit(RestaurantView restaurantView)
         {

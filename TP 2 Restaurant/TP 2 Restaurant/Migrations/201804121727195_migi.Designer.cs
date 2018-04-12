@@ -7,13 +7,13 @@ namespace TP_2_Restaurant.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CedEtDom : IMigrationMetadata
+    public sealed partial class migi : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CedEtDom));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migi));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804121721384_CedEtDom"; }
+            get { return "201804121727195_migi"; }
         }
         
         string IMigrationMetadata.Source

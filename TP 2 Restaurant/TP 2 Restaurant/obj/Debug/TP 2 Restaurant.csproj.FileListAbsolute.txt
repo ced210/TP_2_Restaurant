@@ -565,4 +565,108 @@ C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaur
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CoreCompileInputs.cache
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
-C:\Users\theja\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.CedEtDom.resources
+C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.migi.resources
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\ApplicationInsights.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\TP 2 Restaurant.dll.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\TP 2 Restaurant.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\TP 2 Restaurant.pdb
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csc.exe
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csc.exe.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csc.rsp
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csi.exe
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csi.exe.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\csi.rsp
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.AppContext.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Collections.Immutable.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Console.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Diagnostics.Process.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.IO.Compression.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.IO.Pipes.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Reflection.Metadata.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.AccessControl.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Claims.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Security.Principal.Windows.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Threading.Thread.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.ValueTuple.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Xml.XmlDocument.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Xml.XPath.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\vbc.exe
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\vbc.exe.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\vbc.rsp
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\roslyn\VBCSCompiler.exe.config
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Antlr3.Runtime.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\EntityFramework.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\EntityFramework.SqlServer.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.Agent.Intercept.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.Web.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.Web.Infrastructure.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Newtonsoft.Json.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Helpers.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Mvc.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Optimization.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Razor.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.Razor.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\WebGrease.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\EntityFramework.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\EntityFramework.SqlServer.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Helpers.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Mvc.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Optimization.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.Razor.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.Deployment.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\System.Web.WebPages.Razor.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Antlr3.Runtime.pdb
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Newtonsoft.Json.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.ApplicationInsights.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.DependencyCollector.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.WindowsServer.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\Microsoft.AI.Web.xml
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.Helpers.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.Mvc.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.Optimization.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.Razor.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.WebPages.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.WebPages.Deployment.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\bin\fr\System.Web.WebPages.Razor.resources.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csprojResolveAssemblyReference.cache
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.AddViewBag.resources
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.migi.resources
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.GenerateResource.Cache
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.csproj.CoreCompileInputs.cache
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
+D:\TP 2 RestaurantV4CED\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
