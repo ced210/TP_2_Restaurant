@@ -34,7 +34,7 @@ namespace TP_2_Restaurant.Controllers
         {
             if (by == (string)Session["RestaurantSortBy"])
                 // Inverse le tri
-                Session["RestauratSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
+                Session["RestaurantSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
             else
                 Session["RestaurantSortAscendant"] = true;
             //Donne le tri demander
@@ -58,7 +58,7 @@ namespace TP_2_Restaurant.Controllers
         }
 
         /// <summary>
-        /// Ced 12 avril
+        /// Ced 12 avril MOD
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
@@ -70,6 +70,7 @@ namespace TP_2_Restaurant.Controllers
                 resto = DB.Restaurants.Find(Id);
                 if (resto != null)
                 {
+                    Session["CurrentRestaurant"] = resto;
                     ViewBag.RestaurantViews = resto.ToRestaurantView();
                     //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
                     return View(DB.SortedRatingList(Id,"Date",true));
@@ -80,7 +81,7 @@ namespace TP_2_Restaurant.Controllers
 
 
         /// <summary>
-        /// Dom
+        /// Dom 12 av
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
@@ -94,7 +95,7 @@ namespace TP_2_Restaurant.Controllers
             }
         }
         /// <summary>
-        /// Dom
+        /// Dom 12 av
         /// </summary>
         /// <param name="restaurantView"></param>
         /// <returns></returns>
@@ -108,7 +109,6 @@ namespace TP_2_Restaurant.Controllers
                 ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 if (ModelState.IsValid)
                 {
-
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
 

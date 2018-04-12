@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201804062000292_AddViewBag.Designer.cs">
       <DependentUpon>201804062000292_AddViewBag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804121727195_migi.cs" />
+    <Compile Include="Migrations\201804121727195_migi.Designer.cs">
+      <DependentUpon>201804121727195_migi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cuisine.cs" />
     <Compile Include="Models\PriceRange.cs" />
@@ -297,6 +301,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804062000292_AddViewBag.resx">
       <DependentUpon>201804062000292_AddViewBag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804121727195_migi.resx">
+      <DependentUpon>201804121727195_migi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
