@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Utilities\ImageGUIDReference.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Controllers\RestaurantsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -279,6 +280,7 @@
     <Content Include="Views\Restaurants\Index.cshtml" />
     <Content Include="Views\Restaurants\Create.cshtml" />
     <Content Include="Views\Restaurants\Details.cshtml" />
+    <Content Include="Views\Ratings\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -297,6 +299,7 @@
       <DependentUpon>201804062000292_AddViewBag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,8 +1,14 @@
-﻿@model IRDB.Models.RestaurantView
+﻿@*Ced 12 avril*@ 
 
-@{
+
+@model IEnumerable<IRDB.Models.RatingView>
+
+
+@*@model IRDB.Models.RatingView*@
+
+@*@{
     ViewBag.Title = "Details";
-}
+}*@
 
 <h2>Details</h2>
 
@@ -11,39 +17,47 @@
 <table style="font-size:larger">
     <tr>
         <td rowspan="6" style="padding-right:6px;">
-            <a href="@ViewBag.WebSite" target="_blank" data-toggle="tooltip" title="@ViewBag.WebSite">
-                <img src="/IRDB/RestaurantLogos/@ViewBag.Logo_id" class="MediumPhoto" />
+            <a href="@ViewBag.RestaurantViews.Website" target="_blank" data-toggle="tooltip" title="@ViewBag.RestaurantViews.Website">
+                <img src="/IRDB/RestaurantLogos/@ViewBag.RestaurantViews.Logo_Id" class="MediumPhoto" />
             </a>
         </td>
         <td>
             <table>
                 <tr>
-                    <td><span style="font-size:x-large; font-weight:700"><!--Name-->Arousse</span></td>
+                    <td><span style="font-size:x-large; font-weight:700"><!--Name-->@ViewBag.RestaurantViews.Name</span></td>
                     <td>
                         <!--Rating-->
-                        <input name="Rating" id="Rating" value=3 class="RatingBar" disabled style="width:0px;display:none" />
+                        @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
                     </td>
-                    <td><span style="font-size:large;"><!--NbRating-->(6)</span></td>
+                        <!--NbRating-->
+                    <td><span style="font-size:large;">ViewBag.RestaurantViews.Nb_Ratings</span></td>
                 </tr>
             </table>
         </td>
         <td rowspan="6">
             <!--Image BYOW-->
-            <img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
+            @if (ViewBag.RestaurantViews.BYOW)
+            {
+                <img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
+            }
+            else
+            {
+                @*<img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />*@
+            }
         </td>
     </tr>
     <tr>
         <td>
             <!--Adress-->
-            <a href="https://www.google.ca/maps/place/ @ViewBag.Restaurant.Address" target="_blank">
-                @ViewBag.Restaurant.Address
+            <a href="https://www.google.ca/maps/place/ @ViewBag.RestaurantViews.Address" target="_blank">
+                @ViewBag.RestaurantViews.Address
             </a>
         </td>
     </tr>
     <tr>
         <td>
             <!--Phone-->
-            @ViewBag.Restaurant.Phone
+            @ViewBag.RestaurantViews.Phone
         </td>
     </tr>
     <tr>
@@ -51,10 +65,10 @@
             <table>
                 <tr>
                     <td>Cuisine: </td>
-                    <!--Cuisine-->  
-                    <td>libanaise &nbsp;&nbsp;</td>
+                    <!--Cuisine-->
+                    <td>@ViewBag.RestaurantViews.Cuisine</td>
                     <!--PriceRating-->
-                    <td><b style="color:goldenrod">$ $</b></td>
+                    <td><b style="color:goldenrod">@ViewBag.RestaurantViews.PriceRange_Id</b></td>
                 </tr>
             </table>
         </td>
@@ -63,119 +77,174 @@
         <td></td>
     </tr>
 </table>
-<!---->
+<br />
+<br />
+<!--Lister tout les Ratings (Évaluations)-->
+<table>
+    <tbody>
+        <tr>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Date).ToString(), "Rating", "Date")
+            </th>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Value).ToString(), "Rating", "Evaluation")
+            </th>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rater_Name).ToString(), "Rating", "Nom")
+            </th>
+            <th class="col-md-5">
+                Commentaire
+            </th>
+            <th style="min-width:40px"> @Helper.IconAction(Url, "Create", "Add", "Ajouter une Évaluation!")</th>
+            <th style="min-width:40px"></th>
+        </tr>
 
+        @foreach (var item in Model)
+    {
+        <tr class="data_row" style="">
+            <td style="min-width:90px;height:25px;">
+                <!--rating Date-->
+                @item.Rating_Date.ToString();
+            </td>
+            <td>
+                <!--Rating value-->
+                <div style="min-width:105px"><a class="star fullStar"></a><a class="star fullStar"></a><a class="star fullStar"></a><a class="star fullStar"></a><a class="star"></a></div>
 
-<div>
-    <h4>RestaurantView</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            </td>
+            <td>
+                <!--Rater Name-->
+                Intellibot
+            </td>
+            <td>
+                <!--Comment-->
+            </td>
+            <td>
+                <a href="/IRDB/Ratings/Edit/66">
+                    
+                </a>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            </td>
+            <td>
+                <!--Action Button-->
+                <div style="min-width:90px;height:25px;">
+                   
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@*<div>
+        <h4>RestaurantView</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ZipCode)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ZipCode)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cuisine_Id)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Website)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cuisine_Id)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Website)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PriceRange_Id)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cuisine_Id)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PriceRange_Id)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Cuisine_Id)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BYOW)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PriceRange_Id)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BYOW)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PriceRange_Id)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.BYOW)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BYOW)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Logo_Id)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Logo_Id)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cuisine)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Logo_Id)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cuisine)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Logo_Id)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PriceRange)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cuisine)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PriceRange)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Cuisine)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NbRatings)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PriceRange)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NbRatings)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PriceRange)
+            </dd>
 
-    </dl>
-</div>
+            <dt>
+                @Html.DisplayNameFor(model => model.NbRatings)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NbRatings)
+            </dd>
+
+        </dl>
+    </div>*@
 
 
 

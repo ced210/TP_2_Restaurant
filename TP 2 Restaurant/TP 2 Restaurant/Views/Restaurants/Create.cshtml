@@ -7,10 +7,9 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Restaurants", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(m => m.Cuisine_Id)
 
     <div class="form-horizontal">
         <h4>RestaurantView</h4>
@@ -59,28 +58,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="CategoryId" name="CategoryId" class="form-control" style="">
-                <option value="0">Type de cuisine</option>
-                @foreach (var cuis in ViewBag.Cuisines)
-                {
-                    <option value="@cuis.Id">@cuis.Name</option>
-                }
-            </select>
+                @Helper.ComboBox(ViewBag.Cuisines, "Cuisine_Id")
+                @Html.ValidationMessageFor(model => model.Cuisine_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PriceRange_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select id="CategoryId" name="CategoryId" class="form-control" style="">
-                <option value="0">Type de budget</option>
-                    @{string price = ""; }
-                @for (int cpt = 0; cpt < 5; cpt++)
-                {
-                    @(price +=  "$ ");
-                    <option value="@cpt + 1">@price</option>
-                }
-            </select>
+                @Helper.ComboBox(ViewBag.PriceRanges, "PriceRange_Id")
+                @Html.ValidationMessageFor(model => model.PriceRange_Id, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -101,12 +88,17 @@
                 //AHtml.ValidationMessageFor(model => model.Rating, "", new { Aclass = "text-danger" })
             </div>
         </div>-->
-
+        <!--<div class="form-group">
+            //AHtml.LabelFor(model => model.Logo_Id, htmlAttributes: new { Aclass = "control-label col-md-2" })
+            <div class="col-md-10">
+                //AHtml.EditorFor(model => model.Logo_Id, new { htmlAttributes = new { Aclass = "form-control" } })
+                //AHtml.ValidationMessageFor(model => model.Logo_Id, "", new { Aclass = "text-danger" })
+            </div>
+        </div>-->
         <div class="form-group">
             @Html.LabelFor(model => model.Logo_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Logo_Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Logo_Id, "", new { @class = "text-danger" })
+                @Helper.ImageUpLoader(Url, Model.GetLogoURL(), "Cliquez pour choisir la photo...", "max-width:280px;")
             </div>
         </div>
 
@@ -121,7 +113,7 @@
         <div class="form-group">
             //AHtml.LabelFor(model => model.PriceRange, htmlAttributes: new { Aclass = "control-label col-md-2" })
             <div class="col-md-10">
-                
+
             </div>
         </div>
 
@@ -141,9 +133,9 @@
     </div>
 }
 
-    <div>
-        @Helper.IconAction(Url, "Index", "Back", "Retour a la liste de restaurants")
-    </div>
+<div>
+    @Helper.IconAction(Url, "Index", "Back", "Retour a la liste des restaurants")
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

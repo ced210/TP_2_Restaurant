@@ -57,43 +57,66 @@ namespace TP_2_Restaurant.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Ced 12 avril
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
         public ActionResult Details(int Id)
         {
+            Restaurant resto = null; 
             using (var DB = new RestaurantsEntities())
             {
-                ViewBag.Restaurant = DB.Restaurants.Find(Id);
-                //return View();
+                resto = DB.Restaurants.Find(Id);
+                if (resto != null)
+                {
+                    ViewBag.RestaurantViews = resto.ToRestaurantView();
+                    //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
+                    return View(DB.SortedRatingList(Id,"Date",true));
+                }
             }
-            return View();
+            return RedirectToAction("Index");
         }
 
 
-
+        /// <summary>
+        /// Dom
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             using (var DB = new RestaurantsEntities())
             {
+                RestaurantView restoView = new RestaurantView();
                 ViewBag.Cuisines = DB.Cuisines.ToList();
-                return View();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
+                return View(restoView);
             }
         }
-
-            [HttpPost]
+        /// <summary>
+        /// Dom
+        /// </summary>
+        /// <param name="restaurantView"></param>
+        /// <returns></returns>
+        [HttpPost]
         public ActionResult Create(RestaurantView restaurantView)
         {
+            restaurantView.UpLoadLogo(Request);
             using (var DB = new RestaurantsEntities())
             {
                 ViewBag.Cuisines = DB.Cuisines.ToList();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 if (ModelState.IsValid)
                 {
+
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
-                    resto.Logo_Id = "./RestaurantLogos/restaurant-icon.png";
+
                     DB.Restaurants.Add(resto);
+                    DB.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                return View();
+                return View(restaurantView);
             }
         }
     }
