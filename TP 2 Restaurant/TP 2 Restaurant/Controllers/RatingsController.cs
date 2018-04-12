@@ -47,5 +47,26 @@ namespace TP_2_Restaurant.Controllers
                 return View(ratingview);
             }
         }
+
+        public ActionResult Delete(int id)
+        {
+            using (var DB = new RestaurantsEntities())
+            {
+                Rating rate = DB.Ratings.Find(id);
+                if (rate != null)
+                {
+                    //foreach (var resto in DB.Restaurants)
+                    //{
+                    //    if(resto.Id == rate.Restaurant_Id)
+                    //    {
+
+                    //    }
+
+                    //}
+                    DB.DeleteRating(id);
+                }
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
