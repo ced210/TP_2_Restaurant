@@ -15,16 +15,24 @@ namespace TP_2_Restaurant.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Ced 12 av MOD MOD
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             using (var DB = new RestaurantsEntities())
             {
                 RatingView ratingView = new RatingView();
-
+                ratingView.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
                 return View(ratingView);
             }
         }
+        /// <summary>
+        /// Ced 12 av MOD MOD
+        /// </summary>
+        /// <param name="ratingview"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Create(RatingView ratingview)
         {
@@ -37,10 +45,8 @@ namespace TP_2_Restaurant.Controllers
                     //le resto courrant de la page Details d'avant
                     rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
 
-
-                    DB.Ratings.Add(rating);
-                    DB.SaveChanges();
-                    return RedirectToAction("Index");
+                    DB.Create(rating);
+                    return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
                 }
                 //
                 ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
@@ -48,6 +54,11 @@ namespace TP_2_Restaurant.Controllers
             }
         }
 
+        /// <summary>
+        /// Dom 15 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             using (var DB = new RestaurantsEntities())
