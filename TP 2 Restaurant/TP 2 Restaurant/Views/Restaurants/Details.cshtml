@@ -1,4 +1,4 @@
-﻿@*Ced 12 avril*@ 
+﻿@*Ced 12 avril*@
 
 <!--Reçois la list trier des rating de ce Restaurant-->
 @model IEnumerable<IRDB.Models.RatingView>
@@ -7,30 +7,34 @@
 @*@model IRDB.Models.RatingView*@
 
 @*@{
-    ViewBag.Title = "Details";
-}*@
-
-<h2>Details</h2>
+        ViewBag.Title = "Details";
+    }*@
 
 <!--En-tete Detail du restaurant-->
 <!---->
+<br />
 <table style="font-size:larger">
     <tr>
         <td rowspan="6" style="padding-right:6px;">
             <a href="@ViewBag.RestaurantViews.Website" target="_blank" data-toggle="tooltip" title="@ViewBag.RestaurantViews.Website">
-                <img src="/IRDB/RestaurantLogos/@ViewBag.RestaurantViews.Logo_Id" class="MediumPhoto" />
+                <img src="@Url.Content(ViewBag.RestaurantViews.GetLogoURL())" class="MediumPhoto" />
             </a>
         </td>
         <td>
             <table>
                 <tr>
-                    <td><span style="font-size:x-large; font-weight:700"><!--Name-->@ViewBag.RestaurantViews.Name</span></td>
+                    <td>
+                        <!--Name-->
+                        <span style="font-size:x-large; font-weight:700">@ViewBag.RestaurantViews.Name</span>
+                    </td>
                     <td>
                         <!--Rating-->
                         @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
                     </td>
+                    <td>
                         <!--NbRating-->
-                    <td><span style="font-size:large;">ViewBag.RestaurantViews.Nb_Ratings</span></td>
+                        <span style="font-size:large;">(@ViewBag.RestaurantViews.NbRatings)</span>
+                    </td>
                 </tr>
             </table>
         </td>
@@ -38,11 +42,7 @@
             <!--Image BYOW-->
             @if (ViewBag.RestaurantViews.BYOW)
             {
-                <img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
-            }
-            else
-            {
-                <img src="" class="MediumPhoto" />
+                <img src="~/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
             }
         </td>
     </tr>
@@ -64,78 +64,91 @@
         <td>
             <table>
                 <tr>
-                    <td>Cuisine: </td>
+                    <td>Cuisine:</td>
                     <!--Cuisine-->
                     <td>@ViewBag.RestaurantViews.Cuisine</td>
+                    <td>&nbsp;&nbsp;</td>
                     <!--PriceRating-->
-                    <td><b style="color:goldenrod">@ViewBag.RestaurantViews.PriceRange_Id</b></td>
+                    <td><b style="color:goldenrod">
+                            @Html.DisplayFor(modelItem => ((IRDB.Models.Restaurant)Session["CurrentRestaurant"]).PriceRange.Name)
+                        </b>
+                    </td>
                 </tr>
             </table>
         </td>
     </tr>
-    <tr>
+    <!--<tr>
         <td></td>
-    </tr>
+    </tr>-->
 </table>
+
+
+
 <br />
 <br />
+
+
+
 <!--Lister tout les Ratings (Évaluations)-->
-<table>
+<table class="table">
     <tbody>
         <tr>
             <th class="col-md-2 sorted_header">
-                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Date).ToString(), "Rating", "Date")
+                @Helper.SortAction(Url, "SortRating", Html.DisplayNameFor(model => model.Rating_Date).ToString(), "Ratings", "Date")
             </th>
             <th class="col-md-2 sorted_header">
-                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Value).ToString(), "Rating", "Evaluation")
+                @Helper.SortAction(Url, "SortRating", Html.DisplayNameFor(model => model.Rating_Value).ToString(), "Ratings", "Rating")
             </th>
             <th class="col-md-2 sorted_header">
-                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rater_Name).ToString(), "Rating", "Nom")
+                @Helper.SortAction(Url, "SortRating", Html.DisplayNameFor(model => model.Rater_Name).ToString(), "Ratings", "Name")
+
             </th>
             <th class="col-md-5">
-                Commentaire
+                Commentaires
             </th>
-            <th style="min-width:40px"> @Helper.IconAction(Url, "../Ratings/Create", "Add", "Ajouter une Évaluation!")</th>
+            <th style="min-width:40px">
+                @Helper.IconAction(Url, "../Ratings/Create", "Add", "Ajouter une Évaluation!")
+            </th>
             <th style="min-width:40px"></th>
         </tr>
 
         @foreach (var item in Model)
-    {
-        <tr class="data_row" style="">
-            <td style="min-width:90px;height:25px;">
-                <!--rating Date-->
-                @item.Rating_Date.ToString();
-            </td>
-            <td>
-                <!--Rating value-->
-                @item.Rating_Value
-
-
-            </td>
-            <td>
-                <!--Rater Name-->
-                Intellibot
-            </td>
-            <td>
-                <!--Comment-->
-            </td>
-            <td>
-                <a href="/IRDB/Ratings/Edit/66">
-                    
-                </a>
-
-            </td>
-            <td>
+        {
+            <tr class="data_row" style="">
+                <td style="min-width:90px;height:25px;">
+                    <!--rating Date-->
+                    @item.Rating_Date.ToString()
+                </td>
+                <td>
+                    <!--Rating value-->
+                    @Helper.RatingBar("Rating", item.Rating_Value, true)
+                </td>
+                <td>
+                    <!--Rater Name-->
+                    @item.Rater_Name
+                </td>
+                <td>
+                    <!--Comment-->
+                    @item.Comments
+                </td>
                 <!--Action Button-->
-                <div style="min-width:90px;height:25px;">
-                   
-
-                </div>
-            </td>
-        </tr>
-}
+                <td style="width:80px">
+                    <!--Button Edit-->
+                    @Helper.IconAction(Url, "../Ratings/Edit/" + item.Id.ToString(), "Edit", "Modifier l'évaluation de " + item.Rater_Name)
+                </td>
+                <td>
+                    <!--Button Delete-->
+                    @Helper.IconConfirmedAction(Url, "../Ratings/Delete/" + item.Id.ToString(), "Delete", "Effacer l'évaluation de " + item.Rater_Name)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
+<div>
+    @Helper.IconAction(Url, "Index", "Back", "Retour au Restaurant")
+</div>
 
-
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
