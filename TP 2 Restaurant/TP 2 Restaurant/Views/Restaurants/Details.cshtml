@@ -1,0 +1,141 @@
+﻿@*Ced 12 avril*@ 
+
+<!--Reçois la list trier des rating de ce Restaurant-->
+@model IEnumerable<IRDB.Models.RatingView>
+
+
+@*@model IRDB.Models.RatingView*@
+
+@*@{
+    ViewBag.Title = "Details";
+}*@
+
+<h2>Details</h2>
+
+<!--En-tete Detail du restaurant-->
+<!---->
+<table style="font-size:larger">
+    <tr>
+        <td rowspan="6" style="padding-right:6px;">
+            <a href="@ViewBag.RestaurantViews.Website" target="_blank" data-toggle="tooltip" title="@ViewBag.RestaurantViews.Website">
+                <img src="/IRDB/RestaurantLogos/@ViewBag.RestaurantViews.Logo_Id" class="MediumPhoto" />
+            </a>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td><span style="font-size:x-large; font-weight:700"><!--Name-->@ViewBag.RestaurantViews.Name</span></td>
+                    <td>
+                        <!--Rating-->
+                        @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
+                    </td>
+                        <!--NbRating-->
+                    <td><span style="font-size:large;">ViewBag.RestaurantViews.Nb_Ratings</span></td>
+                </tr>
+            </table>
+        </td>
+        <td rowspan="6">
+            <!--Image BYOW-->
+            @if (ViewBag.RestaurantViews.BYOW)
+            {
+                <img src="/IRDB/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
+            }
+            else
+            {
+                <img src="" class="MediumPhoto" />
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Adress-->
+            <a href="https://www.google.ca/maps/place/ @ViewBag.RestaurantViews.Address" target="_blank">
+                @ViewBag.RestaurantViews.Address
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Phone-->
+            @ViewBag.RestaurantViews.Phone
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Cuisine: </td>
+                    <!--Cuisine-->
+                    <td>@ViewBag.RestaurantViews.Cuisine</td>
+                    <!--PriceRating-->
+                    <td><b style="color:goldenrod">@ViewBag.RestaurantViews.PriceRange_Id</b></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+<br />
+<br />
+<!--Lister tout les Ratings (Évaluations)-->
+<table>
+    <tbody>
+        <tr>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Date).ToString(), "Rating", "Date")
+            </th>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rating_Value).ToString(), "Rating", "Evaluation")
+            </th>
+            <th class="col-md-2 sorted_header">
+                @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Rater_Name).ToString(), "Rating", "Nom")
+            </th>
+            <th class="col-md-5">
+                Commentaire
+            </th>
+            <th style="min-width:40px"> @Helper.IconAction(Url, "../Ratings/Create", "Add", "Ajouter une Évaluation!")</th>
+            <th style="min-width:40px"></th>
+        </tr>
+
+        @foreach (var item in Model)
+    {
+        <tr class="data_row" style="">
+            <td style="min-width:90px;height:25px;">
+                <!--rating Date-->
+                @item.Rating_Date.ToString();
+            </td>
+            <td>
+                <!--Rating value-->
+                @item.Rating_Value
+
+
+            </td>
+            <td>
+                <!--Rater Name-->
+                Intellibot
+            </td>
+            <td>
+                <!--Comment-->
+            </td>
+            <td>
+                <a href="/IRDB/Ratings/Edit/66">
+                    
+                </a>
+
+            </td>
+            <td>
+                <!--Action Button-->
+                <div style="min-width:90px;height:25px;">
+                   
+
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+

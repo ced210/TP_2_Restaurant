@@ -17,6 +17,8 @@ namespace IRDB.Models
         #endregion
 
         public System.Data.Entity.DbSet<IRDB.Models.RestaurantView> RestaurantViews { get; set; }
+
+        public System.Data.Entity.DbSet<IRDB.Models.RatingView> RatingViews { get; set; }
     }
 
     public static class ContactsDBEntities_DAL

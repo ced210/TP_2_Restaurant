@@ -34,7 +34,7 @@ namespace TP_2_Restaurant.Controllers
         {
             if (by == (string)Session["RestaurantSortBy"])
                 // Inverse le tri
-                Session["RestauratSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
+                Session["RestaurantSortAscendant"] = !(bool)Session["RestaurantSortAscendant"];
             else
                 Session["RestaurantSortAscendant"] = true;
             //Donne le tri demander
@@ -57,46 +57,123 @@ namespace TP_2_Restaurant.Controllers
             }
         }
 
+        /// <summary>
+        /// Ced 12 avril MOD
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public ActionResult Details(int Id)
+        {
+            Restaurant resto = null; 
+            using (var DB = new RestaurantsEntities())
+            {
+                resto = DB.Restaurants.Find(Id);
+                if (resto != null)
+                {
+                    Session["CurrentRestaurant"] = resto;
+                    ViewBag.RestaurantViews = resto.ToRestaurantView();
+                    //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
+                    return View(DB.SortedRatingList(Id,"Date",true));
+                }
+            }
+            return RedirectToAction("Index");
+        }
 
 
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             using (var DB = new RestaurantsEntities())
             {
+                RestaurantView restoView = new RestaurantView();
                 ViewBag.Cuisines = DB.Cuisines.ToList();
-                return View();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
+                return View(restoView);
             }
         }
-
-            [HttpPost]
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="restaurantView"></param>
+        /// <returns></returns>
+        [HttpPost]
         public ActionResult Create(RestaurantView restaurantView)
         {
+            restaurantView.UpLoadLogo(Request);
             using (var DB = new RestaurantsEntities())
             {
                 ViewBag.Cuisines = DB.Cuisines.ToList();
+                ViewBag.PriceRanges = DB.PriceRanges.ToList();
                 if (ModelState.IsValid)
                 {
-                    //if (!string.IsNullOrEmpty(restaurantView.))
-                    //{
-                    //    if (!DB.CategoryExist(restaurantView.newCategory))
-                    //    {
-                    //        Category new_Category = DB.Add(new Category { Id = 0, Name = restaurantView.newCategory });
-                    //        restaurantView.CategoryId = new_Category.Id;
-                    //    }
-                    //    else
-                    //    {
-                    //        ModelState.AddModelError("NewCategory", "This category already exist.");
-                    //        return View();
-                    //    }
-                    //}
                     Restaurant resto = new Restaurant();
                     resto = restaurantView.ToRestaurant();
-                    resto.Logo_Id = "./RestaurantLogos/restaurant-icon.png";
+
                     DB.Restaurants.Add(resto);
+                    DB.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                return View();
+                return View(restaurantView);
             }
+        }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Delete(int id)
+        {
+            using (var DB = new RestaurantsEntities())
+            {
+                Restaurant resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    resto.ToRestaurantView().RemoveLogo();
+                    DB.DeleteRestaurant(id);
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Edit(int id)
+        {
+            Restaurant resto = null;
+            using (var DB = new RestaurantsEntities())
+            {
+                resto = DB.Restaurants.Find(id);
+                if (resto != null)
+                {
+                    RestaurantView restoView = new RestaurantView();
+                    ViewBag.Cuisines = DB.Cuisines.ToList();
+                    ViewBag.PriceRanges = DB.PriceRanges.ToList();
+                    restoView = resto.ToRestaurantView();
+                    return View(restoView);
+                }
+            }
+            return RedirectToAction("Index");
+
+        }
+
+        /// <summary>
+        /// Dom 12 av
+        /// </summary>
+        /// <param name="restaurantView"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Edit(RestaurantView restaurantView)
+        {
+            restaurantView.UpLoadLogo(Request);
+            using (var db = new RestaurantsEntities()) { db.Update(restaurantView.ToRestaurant()); }
+            return RedirectToAction("Index");
         }
     }
 }

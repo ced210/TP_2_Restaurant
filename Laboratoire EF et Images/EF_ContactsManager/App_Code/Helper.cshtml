@@ -1,0 +1,101 @@
+﻿@helper Header(string message)
+    {
+        <h2>@message</h2><hr />
+}
+
+@helper IconAction(System.Web.Mvc.UrlHelper Url, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <a href="@Url.Action(Action)">
+            <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+                 class="Icon" data-toggle="tooltip"
+                 data-placement="@ToolTipPlacement"
+                 title="@TooltipMessage" />
+        </a>
+}
+
+@helper IconControllerAction(System.Web.Mvc.UrlHelper Url, string Controller, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <a href="@Url.Action(Action, Controller)">
+            <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+                 class="Icon" data-toggle="tooltip"
+                 data-placement="@ToolTipPlacement"
+                 title="@TooltipMessage" />
+        </a>
+}
+
+@helper IconConfirmedAction(System.Web.Mvc.UrlHelper Url, string Action, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+             style="cursor:pointer"
+             class="Icon" data-toggle="tooltip"
+             data-placement="@ToolTipPlacement"
+             title="@TooltipMessage"
+             onclick='BBConfirm("@TooltipMessage?","@Url.Action(Action)")' />
+}
+
+@helper IconConfirmedActionController(System.Web.Mvc.UrlHelper Url, string Action, string controller, string Icon, string TooltipMessage, string ToolTipPlacement = "bottom")
+    {
+        <img src='@Url.Content(@"~/Content/UI_Images/" + Icon + ".png")'
+             style="cursor:pointer"
+             class="Icon" data-toggle="tooltip"
+             data-placement="@ToolTipPlacement"
+             title="@TooltipMessage"
+             onclick='BBConfirm("@TooltipMessage?","@Url.Action(Action, controller)")' />
+}
+
+@helper SortAction(System.Web.Mvc.UrlHelper Url, string Action, string fieldCaption, string RecordName, string fieldName)
+    {
+        var sortIcon = Url.Content("~/Content/UI_Images/Sort.png");
+        var sortAscIcon = Url.Content("~/Content/UI_Images/SortAsc.png");
+        var sortDescIcon = Url.Content("~/Content/UI_Images/SortDesc.png");
+
+        <a href="@Url.Action(Action, new { by = fieldName })" style="float:left">
+            @if ((string)Session[RecordName + "SortBy"] == fieldName)
+            {
+                if ((bool)Session[RecordName + "SortAscendant"])
+                {
+                    <img src='@sortAscIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" />
+                }
+                else
+                {
+                    <img src='@sortDescIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" />
+                }
+            }
+            else
+            {
+                <img src='@sortIcon' data-toggle="tooltip" data-placement="bottom" title="Trier" style="padding-right:4px;" />
+            }
+        </a>
+        @(new HtmlString(fieldCaption))
+}
+
+@helper ImageUpLoader(System.Web.Mvc.UrlHelper Url, string imageUrl, string tooltipMessage, string style = "height:120px;max-width:300px;")
+    {
+        <img id="UploadedImage"
+             src="@Url.Content(imageUrl)"
+             style="@style;cursor:pointer"
+             data-toggle="tooltip"
+             title="@tooltipMessage" />
+        <input id="ImageUploader"
+               name="ImageUploader"
+               data-val="true"
+               type="file"
+               style="visibility:hidden;height:0px"
+               accept="image/jpeg,image/gif,image/png,image/bmp" />
+}
+
+@helper SexIcon(System.Web.Mvc.UrlHelper Url, EF_ContactsManager.Models.SexTypeView sex, string imgClass, string tooltipMessage)
+    {
+        switch (sex)
+        {
+            case EF_ContactsManager.Models.SexTypeView.female:
+                <img src="@Url.Content("~/Content/UI_Images/Female.png")" class="@imgClass" data-toggle="tooltip" title="@tooltipMessage"/>
+                break;
+            case EF_ContactsManager.Models.SexTypeView.male:
+                <img src="@Url.Content("~/Content/UI_Images/Male.png")" class="@imgClass"  data-toggle="tooltip" title="@tooltipMessage"/>
+                break;
+            case EF_ContactsManager.Models.SexTypeView.other:
+                <img src="@Url.Content("~/Content/UI_Images/OtherSex.png")" class="@imgClass"  data-toggle="tooltip" title="@tooltipMessage"/>
+                break;
+        }
+}
