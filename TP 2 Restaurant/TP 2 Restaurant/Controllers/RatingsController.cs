@@ -66,14 +66,6 @@ namespace TP_2_Restaurant.Controllers
                 Rating rate = DB.Ratings.Find(id);
                 if (rate != null)
                 {
-                    //foreach (var resto in DB.Restaurants)
-                    //{
-                    //    if(resto.Id == rate.Restaurant_Id)
-                    //    {
-
-                    //    }
-
-                    //}
                     DB.DeleteRating(id);
                 }
             }
