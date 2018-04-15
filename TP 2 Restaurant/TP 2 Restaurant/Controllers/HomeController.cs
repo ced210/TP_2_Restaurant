@@ -15,7 +15,7 @@ namespace TP_2_Restaurant.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Répertoire de restaurants";
 
             return View();
         }
