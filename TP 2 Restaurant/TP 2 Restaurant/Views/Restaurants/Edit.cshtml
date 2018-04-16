@@ -12,6 +12,8 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.Id)
     @Html.HiddenFor(model => model.Rating)
+    @Html.HiddenFor(model => model.NbRatings)
+    @Html.HiddenFor(model => model.Logo_Id)
 
     <div class="form-horizontal">
         <h4>RestaurantView</h4>

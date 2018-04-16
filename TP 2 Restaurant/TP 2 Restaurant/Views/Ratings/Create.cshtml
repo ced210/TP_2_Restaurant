@@ -33,6 +33,7 @@
                     <td>
                         <!--Rating-->
                         @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
+                        @Html.ValidationMessageFor(model => model.Rating_Value, "", new { @class = "text-danger" })
                     </td>
                     <td>
                         <!--NbRating-->

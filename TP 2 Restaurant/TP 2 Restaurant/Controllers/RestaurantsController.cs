@@ -189,6 +189,7 @@ namespace TP_2_Restaurant.Controllers
                     ViewBag.Cuisines = DB.Cuisines.ToList();
                     ViewBag.PriceRanges = DB.PriceRanges.ToList();
                     restoView = resto.ToRestaurantView();
+                    restoView.Logo_Id = resto.Logo_Id;
                     return View(restoView);
                 }
             }
