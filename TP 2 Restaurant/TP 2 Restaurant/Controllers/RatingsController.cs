@@ -78,5 +78,42 @@ namespace TP_2_Restaurant.Controllers
             }
             return RedirectToAction("Details/", "Restaurants", new { id = ((Restaurant)Session["CurrentRestaurant"]).Id });
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Edit(int id)
+        {
+            Rating rate = null;
+            Restaurant resto = null;
+            using (var DB = new RestaurantsEntities())
+            {
+                rate = DB.Ratings.Find(id);
+                if (rate != null)
+                {
+                    resto = (Restaurant)Session["CurrentRestaurant"];
+                    ViewBag.RestaurantViews = resto.ToRestaurantView();
+
+                    RatingView ratingView = new RatingView();
+                    ratingView.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
+                    ratingView = rate.ToRatingView();
+                    return View(ratingView);
+                }
+            }
+            return RedirectToAction("Details/" + rate.Restaurant_Id);
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ratingView"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Edit(RatingView ratingView)
+        {
+            using (var db = new RestaurantsEntities()) { db.Update(ratingView.ToRating()); }
+            return RedirectToAction("Details", "Restaurants", new { id = ((Restaurant)Session["CurrentRestaurant"]).Id });
+        }
     }
 }
