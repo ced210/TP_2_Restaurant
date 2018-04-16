@@ -9,10 +9,9 @@ namespace TP_2_Restaurant.Controllers
 {
     public class RestaurantsController : Controller
     {
-        ///<permission cref="">Ced</permission>
+
+        #region Tri des Restaurants et des Évaluations
         /// <summary>
-        /// Ced 8 Avril
-        /// 
         /// Initialise le tri à Par Nom
         /// et en ordre croissant
         /// </summary>
@@ -25,10 +24,7 @@ namespace TP_2_Restaurant.Controllers
             }
         }
 
-        ///<permission cref="">Ced</permission>
         /// <summary>
-        /// Ced 8 Avril
-        /// 
         /// Tri selon l'attribut
         /// </summary>
         public ActionResult Sort(string by)
@@ -45,8 +41,6 @@ namespace TP_2_Restaurant.Controllers
 
         }
         /// <summary>
-        /// Ced 15 Av
-        /// 
         /// Initialise le tri par Date
         /// et en ordre décroissant
         /// </summary>
@@ -62,38 +56,39 @@ namespace TP_2_Restaurant.Controllers
             }
         }
         /// <summary>
-        /// Ced 15 av
+        /// Tri des Évaluations
         /// </summary>
         /// <param name="by"></param>
-        /// <returns></returns>
+        /// <returns>retourne à l'action Details du Id du restaurant</returns>
         public ActionResult SortRating(string by)
         {
             if (by == (string)Session["RatingSortBy"])
                 Session["RatingSortAscendant"] = !(bool)Session["RatingSortAscendant"];
             else
                 Session["RatingSortAscendant"] = true;
+
             Session["RatingSortBy"] = by;
-            //return View("allo");
+            //prend le Id du restaurant consulté de la session courante
             Restaurant r = (Restaurant)Session["CurrentRestaurant"];
             return RedirectToAction("Details/" + r.Id);
         }
-        // GET: Restaurants
+#endregion
+
         public ActionResult Index()
         {
-            //List<RestaurantView> db = new List<RestaurantView>();
-            //db.Add(new Restaurant { Name = "Test" }.ToRestaurantView());
-
+            //Début en initialisant le tri de la liste des Restaurants
             InitializeSessionSort();
             using (var DB = new RestaurantsEntities())
             {
                 return View(DB.SortedRestaurantList((string)Session["RestaurantSortBy"], (bool)Session["RestaurantSortAscendant"])); 
             }
         }
-
         /// <summary>
-        /// Ced 12 avril MOD
+        /// Détails d'un restaurant
+        /// qui affiche aussi une liste de toutes
+        /// les évaluations de ce restaurant
         /// </summary>
-        /// <param name="Id"></param>
+        /// <param name="Id">le Id du Restaurant</param>
         /// <returns></returns>
         public ActionResult Details(int Id)
         {
@@ -112,9 +107,8 @@ namespace TP_2_Restaurant.Controllers
             }
             return RedirectToAction("Index");
         }
-
         /// <summary>
-        /// Dom 12 av
+        /// Création d'un retaurant
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
@@ -128,7 +122,7 @@ namespace TP_2_Restaurant.Controllers
             }
         }
         /// <summary>
-        /// Dom 12 av
+        /// Post de la Création d'un Restaurant
         /// </summary>
         /// <param name="restaurantView"></param>
         /// <returns></returns>
@@ -152,9 +146,8 @@ namespace TP_2_Restaurant.Controllers
                 return View(restaurantView);
             }
         }
-
         /// <summary>
-        /// Dom 12 av
+        /// Suppression d'un restaurants
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -171,11 +164,10 @@ namespace TP_2_Restaurant.Controllers
             }
             return RedirectToAction("Index");
         }
-
         /// <summary>
-        /// Dom 12 av
+        /// Modification du restaurant
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Le Id du Restaurant à modifier</param>
         /// <returns></returns>
         public ActionResult Edit(int id)
         {
@@ -195,9 +187,8 @@ namespace TP_2_Restaurant.Controllers
             return RedirectToAction("Index");
 
         }
-
         /// <summary>
-        /// Dom 12 av
+        /// Post de la Modification du restaurant
         /// </summary>
         /// <param name="restaurantView"></param>
         /// <returns></returns>

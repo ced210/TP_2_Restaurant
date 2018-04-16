@@ -9,27 +9,23 @@ namespace TP_2_Restaurant.Controllers
 {
     public class RatingsController : Controller
     {
-
-        // GET: Ratings
         public ActionResult Index()
         {
             return View();
         }
 
         /// <summary>
-        /// Ced 12 av MOD MOD
+        /// Création d'une évaluation
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
         {
-            //ced 15 av
             //Pour En-tete du resto courrant
             Restaurant resto = null;
 
             using (var DB = new RestaurantsEntities())
             {
-                //ced 15 av
-                //Pour En-tete du resto courrant
+                //En-tete du resto courrant
                 resto = (Restaurant)Session["CurrentRestaurant"];
                 ViewBag.RestaurantViews = resto.ToRestaurantView();
 
@@ -39,9 +35,9 @@ namespace TP_2_Restaurant.Controllers
             }
         }
         /// <summary>
-        /// Ced 12 av MOD MOD
+        /// Post de la Création d'une évaluation
         /// </summary>
-        /// <param name="ratingview"></param>
+        /// <param name="ratingview">un objet RatingView à créer</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult Create(RatingView ratingview)
@@ -55,18 +51,16 @@ namespace TP_2_Restaurant.Controllers
                     //le resto courrant de la page Details d'avant
                     rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
 
-  
-
                     DB.Create(rating);
                     return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
                 }
-                //
+                //Met l'objet du Restaurant présent à évaluer dans le ViewBag, pour utiliser ses informations dans l'en-tête de la page
                 ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
                 return View(ratingview);
             }
         }
         /// <summary>
-        /// Dom 15 av
+        /// Suppression d'une Évaluation
         /// </summary>
         /// <param name="id">Id du Rating</param>
         /// <returns></returns>
