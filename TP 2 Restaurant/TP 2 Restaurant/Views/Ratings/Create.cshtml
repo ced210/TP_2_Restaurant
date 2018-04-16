@@ -1,21 +1,12 @@
-﻿
+﻿@model IRDB.Models.RatingView
 
-
-@*Ced 12 avril*@ 
-@model IRDB.Models.RatingView
-
-@*@{
+@{
     ViewBag.Title = "Create";
-}*@
-
-
-
-
-
+}
 
 <!--En-tete Detail du restaurant-->
-<!---->
 <br />
+
 <table style="font-size:larger">
     <tr>
         <td rowspan="6" style="padding-right:6px;">
@@ -74,6 +65,7 @@
                     <!--PriceRating-->
                     <td>
                         <b style="color:goldenrod">
+                            <!--le type de budget en symbole-->
                             @Html.DisplayFor(modelItem => ((IRDB.Models.Restaurant)Session["CurrentRestaurant"]).PriceRange.Name)
                         </b>
                     </td>
@@ -81,72 +73,54 @@
             </table>
         </td>
     </tr>
-    <!--<tr>
-        <td></td>
-    </tr>-->
 </table>
 
-
-<br />
-<br />
-
+<h2>Évaluation du restaurant</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>RatingView</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
-    <!--Restaurant_Id-->
-    @Html.HiddenFor(model => model.Restaurant_Id)
-    @*@Model.Restaurant_Id = (Restaurant)Session["CurrentRestaurant"].Id*@
-    
-   
-    <!---->
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Rater_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Rater_Name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Rater_Name, "", new { @class = "text-danger" })
+        <!--Restaurant_Id-->
+        @Html.HiddenFor(model => model.Restaurant_Id)
+        <!--Nom de l'auteur de l'évaluation-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rater_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Rater_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rater_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!--Note de l'évaluation-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rating_Value, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Helper.RatingBar("Rating_Value", Model.Rating_Value)
+                @Html.ValidationMessageFor(model => model.Rating_Value, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!--Commentaire de l'auteur-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Comments, htmlAttributes: new { @class = "form-control col-md-10" })
+            </div>
+        </div>
+        <!--Button pour soumettre l'évaluation-->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Enregistrer" class="btn btn-default" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        
-        Évaluation:
-
-        @Html.LabelFor(model => model.Rating_Value, htmlAttributes: new { @class = "control-label col-md-2"})
-        <div class="col-md-10">
-            @Helper.RatingBar("Rating_Value", 0, false)
-            @Html.ValidationMessageFor(model => model.Rating_Value, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Enregistrer" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
-
+<!--Button de retour-->
 <div>
-    @Html.ActionLink("Back to List", "Index")
-    @Helper.IconAction(Url, "Index", "Back", "Retour au Restaurant")
+    @Helper.IconAction(Url, "../Restaurants/Details/" + Model.Restaurant_Id, "Back", "Retour au Restaurant")
 </div>
 
 @section Scripts {

@@ -4,17 +4,20 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Create</h2>
+<h2>Modification</h2>
 
 
 @using (Html.BeginForm("Edit", "Restaurants", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+
     @Html.HiddenFor(model => model.Id)
     @Html.HiddenFor(model => model.Rating)
+    @Html.HiddenFor(model => model.NbRatings)
+    @Html.HiddenFor(model => model.Logo_Id)
 
-    <div class="form-horizontal">
-        <h4>RestaurantView</h4>
+        <!--Nom du Restaurant-->
+        <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -24,7 +27,7 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Adresse Postal-->
         <div class="form-group">
             @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -32,7 +35,7 @@
                 @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Code Postal-->
         <div class="form-group">
             @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -40,7 +43,7 @@
                 @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Numéro de Téléphone-->
         <div class="form-group">
             @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -48,7 +51,7 @@
                 @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Site Web-->
         <div class="form-group">
             @Html.LabelFor(model => model.Website, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -56,23 +59,25 @@
                 @Html.ValidationMessageFor(model => model.Website, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Type de Cuisine-->
         <div class="form-group">
             @Html.LabelFor(model => model.Cuisine_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <!--Selectionné par un ComboxBox-->
                 @Helper.ComboBox(ViewBag.Cuisines, "Cuisine_Id", Model.Cuisine_Id)
                 @Html.ValidationMessageFor(model => model.Cuisine_Id, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Type de Budget-->
         <div class="form-group">
             @Html.LabelFor(model => model.PriceRange_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <!--Selectionné par un ComboxBox-->
                 @Helper.ComboBox(ViewBag.PriceRanges, "PriceRange_Id", Model.PriceRange_Id)
                 @Html.ValidationMessageFor(model => model.PriceRange_Id, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <!--Apporté son Vin (bool)-->
         <div class="form-group">
             @Html.LabelFor(model => model.BYOW, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -82,51 +87,15 @@
                 </div>
             </div>
         </div>
-
-        <!--<div class="form-group">
-            //AHtml.LabelFor(model => model.Rating, htmlAttributes: new { Aclass = "control-label col-md-2" })
-            <div class="col-md-10">
-                //AHtml.EditorFor(model => model.Rating, new { htmlAttributes = new { Aclass = "form-control" } })
-                //AHtml.ValidationMessageFor(model => model.Rating, "", new { Aclass = "text-danger" })
-            </div>
-        </div>-->
-        <!--<div class="form-group">
-            //AHtml.LabelFor(model => model.Logo_Id, htmlAttributes: new { Aclass = "control-label col-md-2" })
-            <div class="col-md-10">
-                //AHtml.EditorFor(model => model.Logo_Id, new { htmlAttributes = new { Aclass = "form-control" } })
-                //AHtml.ValidationMessageFor(model => model.Logo_Id, "", new { Aclass = "text-danger" })
-            </div>
-        </div>-->
+        <!--Selection de l'imgage-->
         <div class="form-group">
             @Html.LabelFor(model => model.Logo_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 @Helper.ImageUpLoader(Url, Model.GetLogoURL(), "Cliquez pour choisir la photo...", "max-width:280px;")
             </div>
         </div>
-
-        <!--<div class="form-group">
-            //AHtml.LabelFor(model => model.Cuisine, htmlAttributes: new { Aclass = "control-label col-md-2" })
-            <div class="col-md-10">
-                //AHtml.EditorFor(model => model.Cuisine, new { htmlAttributes = new { Aclass = "form-control" } })
-                //AHtml.ValidationMessageFor(model => model.Cuisine, "", new { Aclass = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            //AHtml.LabelFor(model => model.PriceRange, htmlAttributes: new { Aclass = "control-label col-md-2" })
-            <div class="col-md-10">
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            //AHtml.LabelFor(model => model.NbRatings, htmlAttributes: new { Aclass = "control-label col-md-2" })
-            <div class="col-md-10">
-                //AHtml.EditorFor(model => model.NbRatings, new { htmlAttributes = new { Aclass = "form-control" } })
-                //AHtml.ValidationMessageFor(model => model.NbRatings, "", new { Aclass = "text-danger" })
-            </div>
-        </div>-->
-
+        <!--Button Enregistrer-->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Enregistrer" class="btn btn-default" />
@@ -134,7 +103,7 @@
         </div>
     </div>
 }
-
+<!--Button Retour-->
 <div>
     @Helper.IconAction(Url, "Index", "Back", "Retour a la liste des restaurants")
 </div>

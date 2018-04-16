@@ -286,6 +286,7 @@
     <Content Include="Views\Restaurants\Details.cshtml" />
     <Content Include="Views\Ratings\Create.cshtml" />
     <Content Include="Views\Restaurants\Edit.cshtml" />
+    <Content Include="Views\Ratings\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
