@@ -101,7 +101,7 @@ namespace TP_2_Restaurant.Controllers
                 }
                 //
                 ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
-                return View(ratingview);
+                return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
             }
         }
         /// <summary>
