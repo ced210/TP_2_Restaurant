@@ -52,10 +52,10 @@ namespace TP_2_Restaurant.Controllers
                     rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
 
                     DB.Create(rating);
+                    //Met l'objet du Restaurant présent à évaluer dans le ViewBag, pour utiliser ses informations dans l'en-tête de la page
+                    ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
                     return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
                 }
-                //Met l'objet du Restaurant présent à évaluer dans le ViewBag, pour utiliser ses informations dans l'en-tête de la page
-                ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
                 return View(ratingview);
             }
         }

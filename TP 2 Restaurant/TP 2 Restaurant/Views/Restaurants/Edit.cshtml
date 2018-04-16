@@ -13,6 +13,8 @@
 
     @Html.HiddenFor(model => model.Id)
     @Html.HiddenFor(model => model.Rating)
+    @Html.HiddenFor(model => model.NbRatings)
+    @Html.HiddenFor(model => model.Logo_Id)
 
         <!--Nom du Restaurant-->
         <div class="form-horizontal">
@@ -89,6 +91,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Logo_Id, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+
                 @Helper.ImageUpLoader(Url, Model.GetLogoURL(), "Cliquez pour choisir la photo...", "max-width:280px;")
             </div>
         </div>
