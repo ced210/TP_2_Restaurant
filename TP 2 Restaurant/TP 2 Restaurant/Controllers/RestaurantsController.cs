@@ -24,6 +24,7 @@ namespace TP_2_Restaurant.Controllers
                 Session["RestaurantSortAscendant"] = true;
             }
         }
+
         ///<permission cref="">Ced</permission>
         /// <summary>
         /// Ced 8 Avril
@@ -43,7 +44,39 @@ namespace TP_2_Restaurant.Controllers
             return RedirectToAction("Index");
 
         }
-
+        /// <summary>
+        /// Ced 15 Av
+        /// 
+        /// Initialise le tri par Date
+        /// et en ordre décroissant
+        /// </summary>
+        private void InitializeRatingSessionSort()
+        {
+            if (Session["RatingSortBy"] == null)
+            {
+                //Par défault,
+                // Tri par date
+                Session["RatingSortBy"] = "Date";
+                // Du plus Récent
+                Session["RatingSortAscendant"] = false;
+            }
+        }
+        /// <summary>
+        /// Ced 15 av
+        /// </summary>
+        /// <param name="by"></param>
+        /// <returns></returns>
+        public ActionResult SortRating(string by)
+        {
+            if (by == (string)Session["RatingSortBy"])
+                Session["RatingSortAscendant"] = !(bool)Session["RatingSortAscendant"];
+            else
+                Session["RatingSortAscendant"] = true;
+            Session["RatingSortBy"] = by;
+            //return View("allo");
+            Restaurant r = (Restaurant)Session["CurrentRestaurant"];
+            return RedirectToAction("Details/" + r.Id);
+        }
         // GET: Restaurants
         public ActionResult Index()
         {
@@ -70,15 +103,15 @@ namespace TP_2_Restaurant.Controllers
                 resto = DB.Restaurants.Find(Id);
                 if (resto != null)
                 {
+                    InitializeRatingSessionSort();
                     Session["CurrentRestaurant"] = resto;
                     ViewBag.RestaurantViews = resto.ToRestaurantView();
                     //ViewBag.Ratings = DB.Ratings.Where(r => r.Restaurant_Id == resto.Id);
-                    return View(DB.SortedRatingList(Id,"Date",true));
+                    return View(DB.SortedRatingList(Id,(string)Session["RatingSortBy"],(bool)Session["RatingSortAscendant"]));
                 }
             }
             return RedirectToAction("Index");
         }
-
 
         /// <summary>
         /// Dom 12 av

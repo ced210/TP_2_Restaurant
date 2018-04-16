@@ -566,6 +566,7 @@ C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaur
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.dll
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP 2 Restaurant.pdb
 C:\Users\201348565\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.migi.resources
+C:\Users\Ced-M\Documents\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\obj\Debug\TP_2_Restaurant.Migrations.migi.resources
 D:\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\ApplicationInsights.config
 D:\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll.config
 D:\GitHub\TP_2_Restaurant\TP 2 Restaurant\TP 2 Restaurant\bin\TP 2 Restaurant.dll

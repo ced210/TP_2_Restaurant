@@ -1,16 +1,100 @@
-﻿@model IRDB.Models.RatingView
+﻿
 
-@{
+
+@*Ced 12 avril*@ 
+@model IRDB.Models.RatingView
+
+@*@{
     ViewBag.Title = "Create";
-}
+}*@
 
-<h2>Create</h2>
+
+
+
+
+
+<!--En-tete Detail du restaurant-->
+<!---->
+<br />
+<table style="font-size:larger">
+    <tr>
+        <td rowspan="6" style="padding-right:6px;">
+            <a href="@ViewBag.RestaurantViews.Website" target="_blank" data-toggle="tooltip" title="@ViewBag.RestaurantViews.Website">
+                <img src="@Url.Content(ViewBag.RestaurantViews.GetLogoURL())" class="MediumPhoto" />
+            </a>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <!--Name-->
+                        <span style="font-size:x-large; font-weight:700">@ViewBag.RestaurantViews.Name</span>
+                    </td>
+                    <td>
+                        <!--Rating-->
+                        @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
+                    </td>
+                    <td>
+                        <!--NbRating-->
+                        <span style="font-size:large;">(@ViewBag.RestaurantViews.NbRatings)</span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td rowspan="6">
+            <!--Image BYOW-->
+            @if (ViewBag.RestaurantViews.BYOW)
+            {
+                <img src="~/Content/UI_Images/Image_BYOW.png" class="MediumPhoto" />
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Adress-->
+            <a href="https://www.google.ca/maps/place/ @ViewBag.RestaurantViews.Address" target="_blank">
+                @ViewBag.RestaurantViews.Address
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--Phone-->
+            @ViewBag.RestaurantViews.Phone
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Cuisine:</td>
+                    <!--Cuisine-->
+                    <td>@ViewBag.RestaurantViews.Cuisine</td>
+                    <td>&nbsp;&nbsp;</td>
+                    <!--PriceRating-->
+                    <td>
+                        <b style="color:goldenrod">
+                            @Html.DisplayFor(modelItem => ((IRDB.Models.Restaurant)Session["CurrentRestaurant"]).PriceRange.Name)
+                        </b>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!--<tr>
+        <td></td>
+    </tr>-->
+</table>
+
+
+<br />
+<br />
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
     <h4>RatingView</h4>
     <hr />
@@ -61,7 +145,6 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
     @Helper.IconAction(Url, "Index", "Back", "Retour au Restaurant")
 </div>
 
