@@ -9,45 +9,6 @@ namespace TP_2_Restaurant.Controllers
 {
     public class RatingsController : Controller
     {
-        #region Rating Sort
-
-        ///// <summary>
-        ///// Ced 15 Av
-        ///// 
-        ///// Initialise le tri par Date
-        ///// et en ordre décroissant
-        ///// </summary>
-        //private void InitializeRatingSessionSort()
-        //{
-        //    if (Session["RatingSortBy"] == null)
-        //    {
-        //        //Par défault,
-        //        // Tri par date
-        //        Session["RatingSortBy"] = "Date";
-        //        // Du plus Récent
-        //        Session["RatingSortAscendant"] = false;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Ced 15 av
-        ///// </summary>
-        ///// <param name="by"></param>
-        ///// <returns></returns>
-        //public ActionResult Sort(string by)
-        //{
-        //    if (by == (string)Session["RatingSortAscendant"])
-        //        Session["RatingSortAscendant"] = !(bool)Session["RatingSortAscendant"];
-        //    else
-        //        Session["RatingSortAscendant"] = true;
-        //    Session["RatingSortBy"] = by;
-        //    return View("allo");
-        //}
-        #endregion
-
-
-
-
 
         // GET: Ratings
         public ActionResult Index()
@@ -122,7 +83,6 @@ namespace TP_2_Restaurant.Controllers
                 }
             }
             return RedirectToAction("Details/", "Restaurants", new { id = ((Restaurant)Session["CurrentRestaurant"]).Id });
-            //return RedirectToAction("Details/" + idResto);
         }
     }
 }
