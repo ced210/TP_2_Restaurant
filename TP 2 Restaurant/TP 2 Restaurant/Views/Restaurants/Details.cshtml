@@ -4,11 +4,9 @@
 @model IEnumerable<IRDB.Models.RatingView>
 
 
-@*@model IRDB.Models.RatingView*@
-
-@*@{
-        ViewBag.Title = "Details";
-    }*@
+@{
+    ViewBag.Title = "Details";
+ }
 
 <!--En-tete Detail du restaurant-->
 <!---->
@@ -29,7 +27,7 @@
                     </td>
                     <td>
                         <!--Rating-->
-                        @Helper.RatingBar("Rating", ViewBag.RestaurantViews.Rating, true)
+                        @Helper.RatingBar("Evaluation", ViewBag.RestaurantViews.Rating, true)
                     </td>
                     <td>
                         <!--NbRating-->
@@ -121,7 +119,7 @@
                 </td>
                 <td>
                     <!--Rating value-->
-                    @Helper.RatingBar("Rating", item.Rating_Value, true)
+                    @Helper.RatingBar("Evaluation", item.Rating_Value, true)
                 </td>
                 <td>
                     <!--Rater Name-->
@@ -144,7 +142,7 @@
         }
     </tbody>
 </table>
-
+<!--Boutton de retour-->
 <div>
     @Helper.IconAction(Url, "Index", "Back", "Retour au Restaurant")
 </div>

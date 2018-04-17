@@ -9,103 +9,58 @@ namespace TP_2_Restaurant.Controllers
 {
     public class RatingsController : Controller
     {
-        #region Rating Sort
-
-        ///// <summary>
-        ///// Ced 15 Av
-        ///// 
-        ///// Initialise le tri par Date
-        ///// et en ordre décroissant
-        ///// </summary>
-        //private void InitializeRatingSessionSort()
-        //{
-        //    if (Session["RatingSortBy"] == null)
-        //    {
-        //        //Par défault,
-        //        // Tri par date
-        //        Session["RatingSortBy"] = "Date";
-        //        // Du plus Récent
-        //        Session["RatingSortAscendant"] = false;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Ced 15 av
-        ///// </summary>
-        ///// <param name="by"></param>
-        ///// <returns></returns>
-        //public ActionResult Sort(string by)
-        //{
-        //    if (by == (string)Session["RatingSortAscendant"])
-        //        Session["RatingSortAscendant"] = !(bool)Session["RatingSortAscendant"];
-        //    else
-        //        Session["RatingSortAscendant"] = true;
-        //    Session["RatingSortBy"] = by;
-        //    return View("allo");
-        //}
-        #endregion
-
-
-
-
-
-        // GET: Ratings
         public ActionResult Index()
         {
             return View();
         }
 
         /// <summary>
-        /// Ced 12 av MOD MOD
+        /// Création d'une évaluation
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
         {
-            //ced 15 av
             //Pour En-tete du resto courrant
             Restaurant resto = null;
-
+            RatingView ratingView = new RatingView();
             using (var DB = new RestaurantsEntities())
             {
-                //ced 15 av
-                //Pour En-tete du resto courrant
+                //En-tete du resto courrant
                 resto = (Restaurant)Session["CurrentRestaurant"];
                 ViewBag.RestaurantViews = resto.ToRestaurantView();
-
-                RatingView ratingView = new RatingView();
                 ratingView.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
-                return View(ratingView);
             }
+            return View(ratingView);
         }
         /// <summary>
-        /// Ced 12 av MOD MOD
+        /// Post de la Création d'une évaluation
         /// </summary>
-        /// <param name="ratingview"></param>
+        /// <param name="ratingview">un objet RatingView à créer</param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult Create(RatingView ratingview)
         {
             using (var DB = new RestaurantsEntities())
             {
+                Rating rating = new Rating();
+                Restaurant resto = null;
+                rating = ratingview.ToRating();
+                //le resto courrant de la page Details d'avant
+                rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
+                resto = (Restaurant)Session["CurrentRestaurant"];
+                ViewBag.RestaurantViews = resto.ToRestaurantView();
                 if (ModelState.IsValid)
                 {
-                    Rating rating = new Rating();
-                    rating = ratingview.ToRating();
-                    //le resto courrant de la page Details d'avant
-                    rating.Restaurant_Id = ((Restaurant)Session["CurrentRestaurant"]).Id;
-
-  
-
                     DB.Create(rating);
+                    //Met l'objet du Restaurant présent à évaluer dans le ViewBag, pour utiliser ses informations dans l'en-tête de la page
+                    ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
                     return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
                 }
-                //
-                ViewBag.RestaurantToEvaluate = ((Restaurant)Session["CurrentRestaurant"]).ToRestaurantView();
-                return RedirectToAction("Details", "Restaurants", new {id = ((Restaurant)Session["CurrentRestaurant"]).Id });
             }
+            return View(ratingview);
         }
         /// <summary>
-        /// Dom 15 av
+        /// Suppression d'une Évaluation
         /// </summary>
         /// <param name="id">Id du Rating</param>
         /// <returns></returns>
@@ -122,9 +77,12 @@ namespace TP_2_Restaurant.Controllers
                 }
             }
             return RedirectToAction("Details/", "Restaurants", new { id = ((Restaurant)Session["CurrentRestaurant"]).Id });
-            //return RedirectToAction("Details/" + idResto);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
             Rating rate = null;
@@ -146,7 +104,11 @@ namespace TP_2_Restaurant.Controllers
             return RedirectToAction("Details/" + rate.Restaurant_Id);
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ratingView"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Edit(RatingView ratingView)
         {

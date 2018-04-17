@@ -3,12 +3,9 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<br />
 <h2>Répertoire des restaurants</h2>
 
-<!--<p>
-    @Html.ActionLink("Create New", "Create")
-</p>-->
 <table class="table">
     <!-- En-tête de la List -->
     <tr>
@@ -22,7 +19,7 @@
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.Cuisine).ToString(), "Restaurants", "Cuisine")
         </th>
         <th class="col-md-2 sorted_header">
-            @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.PriceRange).ToString(), "Restaurants", "PriceRange")
+            @Helper.SortAction(Url, "Sort", @*Html.DisplayNameFor(model => model.PriceRange).ToString()*@ "Budget", "Restaurants", "PriceRange")
         </th>
         <th class="col-md-2 sorted_header">
             @Helper.SortAction(Url, "Sort", Html.DisplayNameFor(model => model.BYOW).ToString(), "Restaurants", "BYOW")
@@ -67,9 +64,8 @@
         </td>
         <td>
 
-            @Helper.RatingBar("Rating", item.Rating, true)
+            @Helper.RatingBar("Evaluations", item.Rating, true)
             <!--le nombre de Rating entre paranthèse-->
-            (@item.Rating)<!--A enlever-->
             (@item.NbRatings)
         </td>
 
@@ -86,10 +82,6 @@
 
     </tr>
 }
-
 </table>
 
-<script>
-
-</script>
 
